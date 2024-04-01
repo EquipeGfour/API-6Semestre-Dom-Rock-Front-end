@@ -1,10 +1,12 @@
 import React from "react";
+import SidebarMenu from "../../components/sidebar/sidebar";
 
 const Processamento = () => {
 
     return (
         <>
-            <h1>Processamento</h1>
+        <SidebarMenu></SidebarMenu>
+            <div style={{textAlign: 'center', fontSize: '60px'}}>Processamento</div>
         </>
     )
 }

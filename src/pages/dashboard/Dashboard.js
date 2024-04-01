@@ -1,10 +1,12 @@
 import React from "react";
+import SidebarMenu from "../../components/sidebar/sidebar";
 
 const Dashboard = () => {
 
     return (
-        <>
-            <h1>Dashboard</h1>
+        <>  
+            <SidebarMenu></SidebarMenu>
+            <div style={{textAlign: 'center', fontSize: '60px'}}>Dashboard</div>
         </>
     )
 }

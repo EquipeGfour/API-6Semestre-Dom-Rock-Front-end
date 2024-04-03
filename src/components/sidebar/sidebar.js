@@ -6,6 +6,8 @@ import {ProSidebar,Menu,MenuItem,SidebarHeader,SidebarFooter,SidebarContent,} fr
 import { HiOutlineChartSquareBar } from "react-icons/hi";
 import { HiUsers } from "react-icons/hi";
 import { HiOutlineTerminal } from "react-icons/hi";
+import { HiLogout } from "react-icons/hi";
+
 
 
 import "./sidebar.css";
@@ -30,18 +32,18 @@ const SidebarMenu = () => {
                     <Link className="dashboard-text" to="/dashboard">Dashboard</Link>
                     </MenuItem>
                     <MenuItem className="users" icon={<HiUsers />}>
-                    <Link  className="users-text"to="/listagem-usuarios">Usuarios</Link>
+                    <Link  className="users-text"to="/listagem-usuarios">Usuários</Link>
                     </MenuItem>
                     <MenuItem className="process" icon={<HiOutlineTerminal />}>
                     <Link className="process-text" to="/processamento">Processamento</Link>
                     </MenuItem>
                 </Menu>
             </SidebarContent>
-            {/* <SidebarFooter>
+            <SidebarFooter>
                 <Menu iconShape="square">
-                    <MenuItem icon={<FiLogOut />}>Logout</MenuItem>
+                    <MenuItem className="logout" icon={<HiLogout />}>Logout</MenuItem>
                 </Menu>
-            </SidebarFooter> */}
+            </SidebarFooter>
         </ProSidebar>
     </div>
     </>

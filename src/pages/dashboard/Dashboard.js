@@ -1,12 +1,15 @@
 import React from "react";
 import SidebarMenu from "../../components/sidebar/sidebar";
+import Navbar from "../../components/navbar/navbar";
 
 const Dashboard = () => {
 
     return (
         <>  
             <SidebarMenu></SidebarMenu>
-            <div style={{textAlign: 'center', fontSize: '60px'}}>Dashboard</div>
+            <Navbar
+                title={"Dashboard"}>
+            </Navbar>
         </>
     )
 }

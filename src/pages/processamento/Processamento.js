@@ -1,12 +1,15 @@
 import React from "react";
 import SidebarMenu from "../../components/sidebar/sidebar";
+import Navbar from "../../components/navbar/navbar";
 
 const Processamento = () => {
 
     return (
         <>
         <SidebarMenu></SidebarMenu>
-            <div style={{textAlign: 'center', fontSize: '60px'}}>Processamento</div>
+        <Navbar
+                title={"Processamento"}>
+        </Navbar>
         </>
     )
 }

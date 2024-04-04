@@ -1,0 +1,33 @@
+/* .card{
+    background-color: aquamarine;
+    border-color: red;
+    text-align: center;
+}
+
+.card .Colunm{
+    background-color: brown;
+} */
+
+
+
+.datatable-scroll-demo .card {
+    
+}
+
+/* Estilos para as células da tabela */
+.datatable-scroll-demo .p-datatable tbody tr td {
+    border-radius: 10;
+}
+
+/* Estilos para o cabeçalho da tabela */
+.datatable-scroll-demo .p-datatable thead th {
+    background-color: #292D32; /* Cor de fundo para o cabeçalho da tabela */
+    color: #FFFFFF;
+
+}
+
+.card{
+    width: 50%;
+    margin-left: 400px;
+}
+

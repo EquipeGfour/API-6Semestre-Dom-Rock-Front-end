@@ -1,6 +1,7 @@
 import React from "react";
 import SidebarMenu from "../../components/sidebar/sidebar";
 import Navbar from "../../components/navbar/navbar";
+import { DataTableScrollDemo } from "../../components/resultado-processamento/resultado-processamento";
 
 const Processamento = () => {
 
@@ -10,6 +11,7 @@ const Processamento = () => {
         <Navbar
                 title={"Processamento"}>
         </Navbar>
+        <DataTableScrollDemo/>
         </>
     )
 }

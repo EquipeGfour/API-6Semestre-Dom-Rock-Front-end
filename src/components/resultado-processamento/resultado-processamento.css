@@ -23,8 +23,17 @@
 .datatable-scroll-demo .p-datatable thead th {
     background-color: #292D32; /* Cor de fundo para o cabeçalho da tabela */
     color: #FFFFFF;
-
 }
+
+.datatable-scroll-demo .p-datatable thead th:first-child{
+
+    border-top-left-radius: 20px;
+}
+.datatable-scroll-demo .p-datatable thead th:last-child{
+    
+    border-top-right-radius: 20px;
+}
+
 
 .card{
     width: 50%;

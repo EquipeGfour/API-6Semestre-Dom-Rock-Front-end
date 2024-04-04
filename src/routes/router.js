@@ -7,6 +7,7 @@ import EditarUsuario from "../pages/usuario/EditarUsuario";
 import Processamento from "../pages/processamento/Processamento";
 import Navbar from "../components/navbar/navbar";
 import SidebarMenu from "../components/sidebar/sidebar";
+import { FileUploadDemo } from "../components/upload/upload";
 
 export default function Rotas(){
     return(
@@ -19,6 +20,7 @@ export default function Rotas(){
             <Route path="cadastro-usuario" element={<CadastrarUsuario></CadastrarUsuario>}></Route>
             <Route path="editar-usuario" element={<EditarUsuario></EditarUsuario>}></Route>
             <Route path="processamento" element={<Processamento></Processamento>}></Route>
+            <Route path="upload" element={<FileUploadDemo></FileUploadDemo>}></Route>
         </Routes>
     )
 }

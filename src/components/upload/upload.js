@@ -1,44 +1,35 @@
-import 'primeicons/primeicons.css';
-import 'primereact/resources/themes/saga-blue/theme.css';
-import 'primereact/resources/primereact.css';
-import 'primeflex/primeflex.css';
-import './upload.css'
-import ReactDOM from 'react-dom';
 
 import React, { Component } from 'react';
 import { Toast } from 'primereact/toast';
 import { FileUpload } from 'primereact/fileupload';
+import { ProgressBar } from 'primereact/progressbar';
+import { Button } from 'primereact/button';
+import { Tooltip } from 'primereact/tooltip';
+import { Tag } from 'primereact/tag';
+import "react-pro-sidebar/dist/css/styles.css";
+import "./upload.css"
 
 export class FileUploadDemo extends Component {
 
-    constructor(props) {
-        super(props);
-
-        this.onUpload = this.onUpload.bind(this);
-    }
-
-    onUpload() {
-        this.toast.show({severity: 'info', summary: 'Success', detail: 'File Uploaded'});
-    }
-    
-    
     render() {
+        const chooseOptions = {icon: 'pi pi-fw pi-images', iconOnly: true, className: 'custom-choose-btn p-button-rounded p-button-outlined'};
+        const uploadOptions = {icon: 'pi pi-fw pi-cloud-upload', iconOnly: true, className: 'custom-upload-btn p-button-success p-button-rounded p-button-outlined'};
+        const cancelOptions = {icon: 'pi pi-fw pi-times', iconOnly: true, className: 'custom-cancel-btn p-button-danger p-button-rounded p-button-outlined'};
+
         return (
-            <div className='header'>
+            <div>
                 <Toast ref={(el) => { this.toast = el; }}></Toast>
 
-                <div className="card">
-                    <h3>Upload de Arquivos</h3>
-                    <div className='bordas'>
-                        <FileUpload name="demo[]" url="./upload.php" onUpload={this.onUpload} chooseLabel='Selecione' auto className="hide-cancel" multiple accept="image/*" maxFileSize={1000000}
-                            emptyTemplate={<p className="p-m-0">Arraste e solte os arquivos aqui para fazer upload</p>} />
-                    </div>
-                </div>
+                <Tooltip target=".custom-choose-btn" content="Choose" position="bottom" />
+                <Tooltip target=".custom-upload-btn" content="Upload" position="bottom" />
+                <Tooltip target=".custom-cancel-btn" content="Clear" position="bottom" />
 
+                <div className="card">
+                    <h5>Advanced</h5>
+                    <FileUpload name="demo[]" url="https://primefaces.org/primereact/showcase/upload.php" chooseLabel='Selecione'  onUpload={this.onUpload} multiple accept="image/*" maxFileSize={1000000}
+                        emptyTemplate={<p className="m-0">Arraste ou selecione o arquivo</p>} />
+                </div>
             </div>
         )
     }
 }
-                
-const rootElement = document.getElementById("root");
-ReactDOM.render(<FileUploadDemo />, rootElement);

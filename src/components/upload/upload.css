@@ -42,12 +42,6 @@
     border-color: #F00E0E;
 }
 
-.p-button:nth-child(2) {
-    color: #ffffff;
-    background-color: #F00E0E;
-    border-color: #F00E0E;
-}
-
 .p-button svg.p-icon:first-child{
     margin-left: 10px;
 }

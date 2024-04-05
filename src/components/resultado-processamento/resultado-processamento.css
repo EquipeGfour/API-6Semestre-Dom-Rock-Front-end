@@ -8,10 +8,9 @@
     background-color: brown;
 } */
 
-
-
-.datatable-scroll-demo .card {
-    
+.fora{
+    border: 1px solid #d9d9d9;
+    border-top-left-radius: 10px;
 }
 
 /* Estilos para as células da tabela */
@@ -26,12 +25,10 @@
 }
 
 .datatable-scroll-demo .p-datatable thead th:first-child{
-
-    border-top-left-radius: 20px;
+    border-top-left-radius: 10px;
 }
 .datatable-scroll-demo .p-datatable thead th:last-child{
-    
-    border-top-right-radius: 20px;
+    border-top-right-radius: 10px;
 }
 
 

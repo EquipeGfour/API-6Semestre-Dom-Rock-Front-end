@@ -249,13 +249,15 @@ export class DataTableScrollDemo extends Component {
         return (
             <div className="datatable-scroll-demo">
                 <div className="card">
-                    <h3>Resultados do Processamento</h3>
-                    <DataTable value={this.state.customers} scrollable scrollHeight="200px" loading={this.state.loading}>
+                    <h3>Resultados do Processsamento</h3>
+                    <div className='fora'>
+                    <DataTable value={this.state.customers} scrollable scrollHeight="350px" loading={this.state.loading}>
                         <Column field="entrada" header="Entrada"></Column>
                         <Column field="Saida.name" header="Saida"></Column>
                         <Column field="Etapa" header="Etapa"></Column>
                         <Column field="Tempo.name" header="Tempo"></Column>
                     </DataTable>
+                    </div>
                 </div>
             </div>
         );

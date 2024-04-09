@@ -24,3 +24,9 @@
     position: relative;
     overflow: hidden;
 }
+
+.p-progressbar .p-progressbar-value {
+    border: 0 none;
+    margin: 0;
+    background: #00B4F1;
+}

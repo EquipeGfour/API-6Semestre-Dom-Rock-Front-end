@@ -1,0 +1,39 @@
+/* .card{
+    background-color: aquamarine;
+    border-color: red;
+    text-align: center;
+}
+
+.card .Colunm{
+    background-color: brown;
+} */
+
+.fora{
+    border: 1px solid #d9d9d9;
+    border-top-left-radius: 10px;
+}
+
+/* Estilos para as células da tabela */
+.datatable-scroll-demo .p-datatable tbody tr td {
+    border-radius: 10;
+}
+
+/* Estilos para o cabeçalho da tabela */
+.datatable-scroll-demo .p-datatable thead th {
+    background-color: #292D32; /* Cor de fundo para o cabeçalho da tabela */
+    color: #FFFFFF;
+}
+
+.datatable-scroll-demo .p-datatable thead th:first-child{
+    border-top-left-radius: 10px;
+}
+.datatable-scroll-demo .p-datatable thead th:last-child{
+    border-top-right-radius: 10px;
+}
+
+.card{
+    width: 60%;
+    margin-left: 400px;
+    margin-top: 70%;
+}
+

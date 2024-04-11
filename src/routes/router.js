@@ -20,6 +20,7 @@ export default function Rotas(){
             <Route path="cadastro-usuario" element={<CadastrarUsuario></CadastrarUsuario>}></Route>
             <Route path="editar-usuario" element={<EditarUsuario></EditarUsuario>}></Route>
             <Route path="processamento" element={<Processamento></Processamento>}></Route>
+            
             <Route path="upload" element={<FileUploadDemo></FileUploadDemo>}></Route>
         </Routes>
     )

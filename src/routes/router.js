@@ -7,7 +7,12 @@ import EditarUsuario from "../pages/usuario/EditarUsuario";
 import Processamento from "../pages/processamento/Processamento";
 import Navbar from "../components/navbar/navbar";
 import SidebarMenu from "../components/sidebar/sidebar";
+
 import { DataTableScrollDemo } from "../components/resultado-processamento/resultado-processamento";
+
+
+import { FileUploadDemo } from "../components/upload/upload";
+
 
 export default function Rotas(){
     return(
@@ -21,8 +26,14 @@ export default function Rotas(){
             <Route path="editar-usuario" element={<EditarUsuario></EditarUsuario>}></Route>
             <Route path="processamento" element={<Processamento></Processamento>}></Route>
 
+
             
             <Route path="resultado-processamento" element={<DataTableScrollDemo></DataTableScrollDemo>}></Route>
+      
+
+            
+            <Route path="upload" element={<FileUploadDemo></FileUploadDemo>}></Route>
+
         </Routes>
     )
 }

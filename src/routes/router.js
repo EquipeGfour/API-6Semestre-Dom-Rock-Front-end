@@ -9,6 +9,12 @@ import Navbar from "../components/navbar/navbar";
 import SidebarMenu from "../components/sidebar/sidebar";
 import ProgressBar from "../components/progress-bar/progressBar";
 
+import { DataTableScrollDemo } from "../components/resultado-processamento/resultado-processamento";
+
+
+import { FileUploadDemo } from "../components/upload/upload";
+
+
 export default function Rotas(){
     return(
         <Routes>
@@ -21,6 +27,15 @@ export default function Rotas(){
             <Route path="cadastro-usuario" element={<CadastrarUsuario></CadastrarUsuario>}></Route>
             <Route path="editar-usuario" element={<EditarUsuario></EditarUsuario>}></Route>
             <Route path="processamento" element={<Processamento></Processamento>}></Route>
+
+
+            
+            <Route path="resultado-processamento" element={<DataTableScrollDemo></DataTableScrollDemo>}></Route>
+      
+
+            
+            <Route path="upload" element={<FileUploadDemo></FileUploadDemo>}></Route>
+
         </Routes>
     )
 }

@@ -5,6 +5,7 @@ import Navbar from "../../components/navbar/navbar";
 import { DataTableScrollDemo } from "../../components/resultado-processamento/resultado-processamento";
 
 import { FileUploadDemo } from "../../components/upload/upload";
+import ProgressoBarra from "../../components/progress-bar/progressBar";
 
 
 const Processamento = () => {
@@ -16,10 +17,11 @@ const Processamento = () => {
         <Navbar
                 title={"Processamento"}>
         </Navbar>
-        
-        <DataTableScrollDemo/>
+        <div className="divisona">
             <FileUploadDemo/>
-
+            <ProgressoBarra/>
+            <DataTableScrollDemo/>
+        </div>
         </>
     )
 }

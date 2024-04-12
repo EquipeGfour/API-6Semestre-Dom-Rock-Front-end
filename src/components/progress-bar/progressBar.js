@@ -36,10 +36,8 @@ const ProgressoBarra = () => {
 
     return (
         <>
-            <SidebarMenu />
-            <Navbar title={"ProgressBar"} />
             <Toast ref={toast} />
-            <div className="card">
+            <div className="card-progress">
                 <div className="title-process">
                     <span >Progresso do Processamento</span>
                 </div>

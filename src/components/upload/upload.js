@@ -24,8 +24,10 @@ export class FileUploadDemo extends Component {
                 <Tooltip target=".custom-upload-btn" content="Upload" position="bottom" />
                 <Tooltip target=".custom-cancel-btn" content="Clear" position="bottom" />
 
-                <div className="card">
-                    <h5>Advanced</h5>
+                <div className="card-uploads">
+                <div className="title-process-upload">
+                    <span >Upload da Base de Dados</span>
+                </div>
                     <FileUpload name="demo[]" url="https://primefaces.org/primereact/showcase/upload.php" chooseLabel='Selecione'  onUpload={this.onUpload} multiple accept="image/*" maxFileSize={1000000}
                         emptyTemplate={<p className="m-0">Arraste ou selecione o arquivo</p>} />
                 </div>

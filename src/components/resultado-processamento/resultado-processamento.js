@@ -238,6 +238,199 @@ export class DataTableScrollDemo extends Component {
                     image: "amyelsner.png"
                 }
             }
+            ,
+            {
+                id: 5135,
+                entrada: "test.csv",
+                Saida: {
+                    name: "html/txt",
+                    code: "fr"
+                },
+                company: "Bisset Group",
+                Etapa: "Raspagem",
+                date: "2019-05-05",
+                activity: 0,
+                Tempo: {
+                    name: "2 m/s",
+                    image: "amyelsner.png"
+                }
+            },
+            {
+                id: 5135,
+                entrada: "test.csv",
+                Saida: {
+                    name: "html/txt",
+                    code: "fr"
+                },
+                company: "Bisset Group",
+                Etapa: "Raspagem",
+                date: "2019-05-05",
+                activity: 0,
+                Tempo: {
+                    name: "2 m/s",
+                    image: "amyelsner.png"
+                }
+            },
+            {
+                id: 5135,
+                entrada: "test.csv",
+                Saida: {
+                    name: "html/txt",
+                    code: "fr"
+                },
+                company: "Bisset Group",
+                Etapa: "Raspagem",
+                date: "2019-05-05",
+                activity: 0,
+                Tempo: {
+                    name: "2 m/s",
+                    image: "amyelsner.png"
+                }
+            },
+            {
+                id: 5135,
+                entrada: "test.csv",
+                Saida: {
+                    name: "html/txt",
+                    code: "fr"
+                },
+                company: "Bisset Group",
+                Etapa: "Raspagem",
+                date: "2019-05-05",
+                activity: 0,
+                Tempo: {
+                    name: "2 m/s",
+                    image: "amyelsner.png"
+                }
+            },
+            {
+                id: 5135,
+                entrada: "test.csv",
+                Saida: {
+                    name: "html/txt",
+                    code: "fr"
+                },
+                company: "Bisset Group",
+                Etapa: "Raspagem",
+                date: "2019-05-05",
+                activity: 0,
+                Tempo: {
+                    name: "2 m/s",
+                    image: "amyelsner.png"
+                }
+            },
+            {
+                id: 5135,
+                entrada: "test.csv",
+                Saida: {
+                    name: "html/txt",
+                    code: "fr"
+                },
+                company: "Bisset Group",
+                Etapa: "Raspagem",
+                date: "2019-05-05",
+                activity: 0,
+                Tempo: {
+                    name: "2 m/s",
+                    image: "amyelsner.png"
+                }
+            },
+            {
+                id: 5135,
+                entrada: "test.csv",
+                Saida: {
+                    name: "html/txt",
+                    code: "fr"
+                },
+                company: "Bisset Group",
+                Etapa: "Raspagem",
+                date: "2019-05-05",
+                activity: 0,
+                Tempo: {
+                    name: "2 m/s",
+                    image: "amyelsner.png"
+                }
+            },
+            {
+                id: 5135,
+                entrada: "test.csv",
+                Saida: {
+                    name: "html/txt",
+                    code: "fr"
+                },
+                company: "Bisset Group",
+                Etapa: "Raspagem",
+                date: "2019-05-05",
+                activity: 0,
+                Tempo: {
+                    name: "2 m/s",
+                    image: "amyelsner.png"
+                }
+            },
+            {
+                id: 5135,
+                entrada: "test.csv",
+                Saida: {
+                    name: "html/txt",
+                    code: "fr"
+                },
+                company: "Bisset Group",
+                Etapa: "Raspagem",
+                date: "2019-05-05",
+                activity: 0,
+                Tempo: {
+                    name: "2 m/s",
+                    image: "amyelsner.png"
+                }
+            },
+            {
+                id: 5135,
+                entrada: "test.csv",
+                Saida: {
+                    name: "html/txt",
+                    code: "fr"
+                },
+                company: "Bisset Group",
+                Etapa: "Raspagem",
+                date: "2019-05-05",
+                activity: 0,
+                Tempo: {
+                    name: "2 m/s",
+                    image: "amyelsner.png"
+                }
+            },
+            {
+                id: 5135,
+                entrada: "test.csv",
+                Saida: {
+                    name: "html/txt",
+                    code: "fr"
+                },
+                company: "Bisset Group",
+                Etapa: "Raspagem",
+                date: "2019-05-05",
+                activity: 0,
+                Tempo: {
+                    name: "2 m/s",
+                    image: "amyelsner.png"
+                }
+            },
+            {
+                id: 5135,
+                entrada: "test.csv",
+                Saida: {
+                    name: "html/txt",
+                    code: "fr"
+                },
+                company: "Bisset Group",
+                Etapa: "Raspagem",
+                date: "2019-05-05",
+                activity: 0,
+                Tempo: {
+                    name: "2 m/s",
+                    image: "amyelsner.png"
+                }
+            }
         ];
     
         this.setState({ customers, loading: false });
@@ -248,8 +441,10 @@ export class DataTableScrollDemo extends Component {
     render() {
         return (
             <div className="datatable-scroll-demo">
-                <div className="card">
-                    <h3>Resultados do Processsamento</h3>
+                <div className="card-table">
+                <div className="title-process-processamento">
+                    <span >Resultado do Processamento</span>
+                </div>
                     <div className='fora'>
                     <DataTable value={this.state.customers} scrollable scrollHeight="350px" loading={this.state.loading}>
                         <Column field="entrada" header="Entrada"></Column>

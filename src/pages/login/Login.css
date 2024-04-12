@@ -1,0 +1,93 @@
+.container {
+    background-image: url('./../../img/fundo.png');
+    background-size: cover; /* Para cobrir todo o container */
+    background-position: center; /* Para centralizar a imagem */
+    height: 100vh; /* Altura igual à altura da janela do navegador */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Cor do texto */
+}
+
+.card-login {
+    display: flex;
+    width: 1000px;
+    height: 600px;
+    background-color: rgb(255, 255, 255); /* Cor do fundo do card */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;    
+}
+
+.card-logo{
+    width: 40%;
+    height: 560px;
+    /* border: 1px solid #d9d9d9; */
+    display: flex; /* Utiliza flexbox */
+    flex-direction: column; /* Alinha os itens verticalmente */
+    align-items: center; /* Centraliza horizontalmente */  
+}
+
+.card-form{
+    width: 60%;
+    height: 560px;
+    /* border: 1px solid #d9d9d9; */
+}
+
+.card-logo, .card-form{
+    display: flex;
+}
+
+.logo-login{
+    margin-top: 50px !important;
+    padding-top: 10px;
+    height: 100px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.logo-text {
+    margin-top: 100px; /* Espaçamento entre a imagem e o texto */
+    color: black;
+    font-size: 20px;
+}
+
+.inner-card {
+    margin-top: 70px !important;
+    margin: 0 auto;
+    width: 70%;
+    height: 400px;
+    padding: 10px;
+    border: 1px solid rgb(236, 230, 230);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.espacamento-input1 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 90%;
+    color:black
+}
+
+.espacamento-input2 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 90%;
+    color:black
+}
+
+.btn-login{
+    margin-top: 30px;
+    width:40%  !important;
+    height: 40px !important;
+    font-size: 20px !important;
+    background-color: #00B4F1 !important;
+    border: #00B4F1 !important;
+}
+
+
+

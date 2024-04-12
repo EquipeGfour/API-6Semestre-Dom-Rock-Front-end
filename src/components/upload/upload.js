@@ -26,7 +26,7 @@ export class FileUploadDemo extends Component {
 
                 <div className="card-uploads">
                 <div className="title-process-upload">
-                    <span >Progresso do Processamento</span>
+                    <span >Upload da Base de Dados</span>
                 </div>
                     <FileUpload name="demo[]" url="https://primefaces.org/primereact/showcase/upload.php" chooseLabel='Selecione'  onUpload={this.onUpload} multiple accept="image/*" maxFileSize={1000000}
                         emptyTemplate={<p className="m-0">Arraste ou selecione o arquivo</p>} />

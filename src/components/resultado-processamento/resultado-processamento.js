@@ -443,7 +443,7 @@ export class DataTableScrollDemo extends Component {
             <div className="datatable-scroll-demo">
                 <div className="card-table">
                 <div className="title-process-processamento">
-                    <span >Progresso do Processamento</span>
+                    <span >Resultado do Processamento</span>
                 </div>
                     <div className='fora'>
                     <DataTable value={this.state.customers} scrollable scrollHeight="350px" loading={this.state.loading}>

@@ -21,7 +21,7 @@ const Login = () => {
                     </div>
                     <div className="card-form">
                         <div className="inner-card">
-                            <h3 style={{color: '#292D32', marginTop: '20px'}}>Login</h3>
+                            <h1 style={{color: '#292D32', marginTop: '20px'}}>Login</h1>
                             <InputText className='espacamento-input1' value={email} placeholder='Email'  onChange={(e) => setEmail(e.target.value)} />
                             <InputText className='espacamento-input2' type="password" value={senha} placeholder='Senha' onChange={(e) => setSenha(e.target.value)} />
                             <Button onClick={() => window.location.href = '/dashboard'} className='btn-login' label="Entrar" aria-label="Submit"/>                                                   

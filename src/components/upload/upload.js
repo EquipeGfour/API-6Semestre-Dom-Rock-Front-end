@@ -9,7 +9,7 @@ import { Tag } from 'primereact/tag';
 import { Badge } from 'primereact/badge';
 import "react-pro-sidebar/dist/css/styles.css";
 import "./upload.css"
-import useDocs from '../../hooks/hooks';
+import {useDocs} from '../../hooks/hooks';
 
 const FileUploadDemo = () => {
     const fileUploadRef = React.createRef();

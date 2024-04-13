@@ -6,4 +6,9 @@ function useDocs() {
     return context;
 }
 
-export default useDocs;
+function usePreprocessInfo() {
+    const context = useContext(Contexto);
+    return context;
+}
+
+export  {useDocs, usePreprocessInfo};

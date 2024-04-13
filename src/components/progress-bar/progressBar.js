@@ -4,7 +4,7 @@ import React, { useState, useRef } from 'react';
 import { ProgressBar } from 'primereact/progressbar';
 import { Toast } from 'primereact/toast';
 import { Button } from 'primereact/button';
-import useDocs from "../../hooks/hooks";
+import {useDocs} from "../../hooks/hooks";
 import axios from "axios";
 
 import "primereact/resources/themes/lara-light-indigo/theme.css"; 
@@ -15,7 +15,7 @@ import "./progressBar.css";
 const ProgressoBarra = () => {
     const [loading1, setLoading1] = useState(false);
     const [value1, setValue1] = useState(0);
-    const {docid, setDocid} = useDocs({});
+    const {docid, setDocid} = useDocs();
     const toast = useRef(null);
     const interval = useRef(null);
 
@@ -23,7 +23,8 @@ const ProgressoBarra = () => {
         onLoadingClick1()
         axios.post(`http://localhost:8001/preprocessing/start?doc_id=${docid.id}`)
         .then(response=> {
-            setDocid({});
+            docid.endPipeline=true;
+            setDocid(prevValue=>({...prevValue, ...docid}));
         }).catch(error=> {
             console.log(error);
         })            
@@ -39,12 +40,12 @@ const ProgressoBarra = () => {
                 if (newValue >= 100) {
                     clearInterval(interval.current);
                     setLoading1(false);
-                    setValue1(100);
-                    toast.current.show({ severity: 'info', summary: 'Sucesso', detail: 'Processamento concluído' });
+                    
+                    return 100;
                 }
                 return newValue;
             });
-        }, 1000);
+        }, 800);
     };
 
     return (

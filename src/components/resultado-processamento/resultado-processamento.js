@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import './resultado-processamento.css';
@@ -6,260 +6,44 @@ import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
+import { usePreprocessInfo, useDocs  } from '../../hooks/hooks';
+import axios from "axios";
 
 
+export const DataTableScrollDemo = () => {  
+    const [loading, setLoading] = useState(false);
+    const {docid, setDocid} = useDocs();
+    const {preprocessinfo, setPreprocessinfo} = usePreprocessInfo([]);
 
-
-export class DataTableScrollDemo extends Component {
-
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            customers: [],
-            virtualCustomers: [],
-            inmemoryData: [],
-            lazyTotalRecords: 0,
-            loading: false,
-            virtualLoading: false
-        };
-
+    const getResults = () => {
+        if (docid.endPipeline){
+            axios.get(`http://localhost:8000/pre-processing/get?doc_id=${docid.id}`)
+        .then(response=> {
+            setPreprocessinfo(response.data);
+        }).catch(error=> {
+            console.log(error);
+        })}            
     }
 
-    componentDidMount() {
-        this.setState({ loading: true, virtualLoading: true });
-    
-        // Mock data
-        const customers = [
-            {
-                id: 1255,
-                entrada: "test.csv",
-                Saida: {
-                    name: "html/txt",
-                    code: "CEU"
-                },
-                company: "McAdams Consulting Ltd",
-                date: "2014-02-13",
-                Etapa: "Raspagem",
-                activity: 23,
-                Tempo: {
-                    name: "2 m/s",
-                    image: "ionibowcher.png"
-                }
-            },
-            {
-                id: 1255,
-                entrada: "test.csv",
-                Saida: {
-                    name: "html/txt",
-                    code: "CEU"
-                },
-                company: "McAdams Consulting Ltd",
-                date: "2014-02-13",
-                Etapa: "Raspagem",
-                activity: 23,
-                Tempo: {
-                    name: "2 m/s",
-                    image: "ionibowcher.png"
-                }
-            },
-            {
-                id: 1255,
-                entrada: "test.csv",
-                Saida: {
-                    name: "html/txt",
-                    code: "CEU"
-                },
-                company: "McAdams Consulting Ltd",
-                date: "2014-02-13",
-                Etapa: "Raspagem",
-                activity: 23,
-                Tempo: {
-                    name: "2 m/s",
-                    image: "ionibowcher.png"
-                }
-            },
-            {
-                id: 1255,
-                entrada: "test.csv",
-                Saida: {
-                    name: "html/txt",
-                    code: "CEU"
-                },
-                company: "McAdams Consulting Ltd",
-                date: "2014-02-13",
-                Etapa: "Raspagem",
-                activity: 23,
-                Tempo: {
-                    name: "2 m/s",
-                    image: "ionibowcher.png"
-                }
-            },
-            {
-                id: 1255,
-                entrada: "test.csv",
-                Saida: {
-                    name: "html/txt",
-                    code: "CEU"
-                },
-                company: "McAdams Consulting Ltd",
-                date: "2014-02-13",
-                Etapa: "Raspagem",
-                activity: 23,
-                Tempo: {
-                    name: "2 m/s",
-                    image: "ionibowcher.png"
-                }
-            },
-            {
-                id: 1255,
-                entrada: "test.csv",
-                Saida: {
-                    name: "html/txt",
-                    code: "CEU"
-                },
-                company: "McAdams Consulting Ltd",
-                date: "2014-02-13",
-                Etapa: "Raspagem",
-                activity: 23,
-                Tempo: {
-                    name: "2 m/s",
-                    image: "ionibowcher.png"
-                }
-            },
-            {
-                id: 1255,
-                entrada: "test.csv",
-                Saida: {
-                    name: "html/txt",
-                    code: "CEU"
-                },
-                company: "McAdams Consulting Ltd",
-                date: "2014-02-13",
-                Etapa: "Raspagem",
-                activity: 23,
-                Tempo: {
-                    name: "2 m/s",
-                    image: "ionibowcher.png"
-                }
-            },
-            {
-                id: 1255,
-                entrada: "test.csv",
-                Saida: {
-                    name: "html/txt",
-                    code: "CEU"
-                },
-                company: "McAdams Consulting Ltd",
-                date: "2014-02-13",
-                Etapa: "Raspagem",
-                activity: 23,
-                Tempo: {
-                    name: "2 m/s",
-                    image: "ionibowcher.png"
-                }
-            },
-            {
-                id: 1255,
-                entrada: "test.csv",
-                Saida: {
-                    name: "html/txt",
-                    code: "CEU"
-                },
-                company: "McAdams Consulting Ltd",
-                date: "2014-02-13",
-                Etapa: "Raspagem",
-                activity: 23,
-                Tempo: {
-                    name: "2 m/s",
-                    image: "ionibowcher.png"
-                }
-            },
-            {
-                id: 1255,
-                entrada: "test.csv",
-                Saida: {
-                    name: "html/txt",
-                    code: "CEU"
-                },
-                company: "McAdams Consulting Ltd",
-                date: "2014-02-13",
-                Etapa: "Raspagem",
-                activity: 23,
-                Tempo: {
-                    name: "2 m/s",
-                    image: "ionibowcher.png"
-                }
-            },
-            {
-                id: 1255,
-                entrada: "test.csv",
-                Saida: {
-                    name: "html/txt",
-                    code: "CEU"
-                },
-                company: "McAdams Consulting Ltd",
-                date: "2014-02-13",
-                Etapa: "Raspagem",
-                activity: 23,
-                Tempo: {
-                    name: "2 m/s",
-                    image: "ionibowcher.png"
-                }
-            },{
-                id: 1255,
-                entrada: "test.csv",
-                Saida: {
-                    name: "html/txt",
-                    code: "CEU"
-                },
-                company: "McAdams Consulting Ltd",
-                date: "2014-02-13",
-                Etapa: "Raspagem",
-                activity: 23,
-                Tempo: {
-                    name: "2 m/s",
-                    image: "ionibowcher.png"
-                }
-            },
-            {
-                id: 5135,
-                entrada: "test.csv",
-                Saida: {
-                    name: "html/txt",
-                    code: "fr"
-                },
-                company: "Bisset Group",
-                Etapa: "Raspagem",
-                date: "2019-05-05",
-                activity: 0,
-                Tempo: {
-                    name: "2 m/s",
-                    image: "amyelsner.png"
-                }
-            }
-        ];
-    
-        this.setState({ customers, loading: false });
-    }
-    
+    useEffect(() => {
+        getResults();
+    },[docid])
 
-
-    render() {
-        return (
-            <div className="datatable-scroll-demo">
-                <div className="card">
-                    <h3>Resultados do Processsamento</h3>
-                    <div className='fora'>
-                    <DataTable value={this.state.customers} scrollable scrollHeight="350px" loading={this.state.loading}>
-                        <Column field="entrada" header="Entrada"></Column>
-                        <Column field="Saida.name" header="Saida"></Column>
-                        <Column field="Etapa" header="Etapa"></Column>
-                        <Column field="Tempo.name" header="Tempo"></Column>
-                    </DataTable>
-                    </div>
-                </div>
+    return (
+        <div className="datatable-scroll-demo">
+        <div className="card-table">
+        <div className="title-process-processamento">
+            <span >Resultado do Processamento</span>
+        </div>
+            <div className='fora'>
+            <DataTable value={preprocessinfo} scrollable scrollHeight="350px" loading={loading}>
+                <Column field="input" header="Entrada"></Column>
+                <Column field="output" header="Saida"></Column>
+                <Column field="step" header="Etapa"></Column>
+                <Column field="processing_time" header="Tempo"></Column>
+            </DataTable>
             </div>
-        );
-    }
+        </div>
+    </div>
+    )
 }

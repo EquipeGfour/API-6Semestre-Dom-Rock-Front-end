@@ -1,12 +1,3 @@
-/* .card{
-    background-color: aquamarine;
-    border-color: red;
-    text-align: center;
-}
-
-.card .Colunm{
-    background-color: brown;
-} */
 
 .fora{
     border: 1px solid #d9d9d9;
@@ -31,10 +22,15 @@
     border-top-right-radius: 10px;
 }
 
-
-.card{
-    width: 60%;
-    margin-left: 400px;
-    margin-top: 70%;
+.title-process-processamento{
+    font-size: 30px;
+    margin-bottom: 40px;
+    display: flex;
+    align-self: flex-start !important;
+    font-weight: bold;
+    margin-top: 80px;
 }
 
+.card-table{
+    margin-bottom: 50px;
+}

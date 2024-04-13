@@ -12,7 +12,6 @@ const Processamento = () => {
 
     return (
         <>
-
         <SidebarMenu></SidebarMenu>
         <Navbar
                 title={"Processamento"}>

@@ -12,7 +12,7 @@ import ProgressBar from "../components/progress-bar/progressBar";
 import { DataTableScrollDemo } from "../components/resultado-processamento/resultado-processamento";
 
 
-import { FileUploadDemo } from "../components/upload/upload";
+import  FileUploadDemo  from "../components/upload/upload";
 
 
 export default function Rotas(){

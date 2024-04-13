@@ -4,17 +4,30 @@ import React, { useState, useRef } from 'react';
 import { ProgressBar } from 'primereact/progressbar';
 import { Toast } from 'primereact/toast';
 import { Button } from 'primereact/button';
+import useDocs from "../../hooks/hooks";
+import axios from "axios";
 
-import "primereact/resources/themes/lara-light-indigo/theme.css";  //theme
-import "primereact/resources/primereact.min.css";                  //core css
-import "primeicons/primeicons.css";                                //icons      
+import "primereact/resources/themes/lara-light-indigo/theme.css"; 
+import "primereact/resources/primereact.min.css";                  
+import "primeicons/primeicons.css";                                    
 import "./progressBar.css";
 
 const ProgressoBarra = () => {
     const [loading1, setLoading1] = useState(false);
     const [value1, setValue1] = useState(0);
+    const {docid, setDocid} = useDocs({});
     const toast = useRef(null);
     const interval = useRef(null);
+
+    const iniciarPipeline = () => {
+        onLoadingClick1()
+        axios.post(`http://localhost:8001/preprocessing/start?doc_id=${docid.id}`)
+        .then(response=> {
+            setDocid({});
+        }).catch(error=> {
+            console.log(error);
+        })            
+    }
 
     const onLoadingClick1 = () => {
         setLoading1(true);
@@ -40,11 +53,9 @@ const ProgressoBarra = () => {
             <div className="card-progress">
                 <div className="title-process">
                     <span >Progresso do Processamento</span>
-                </div>
-                
-                
+                </div>            
                 <ProgressBar value={value1} />
-                <Button className="btnIniciar" label="Iniciar" loading={loading1} onClick={onLoadingClick1} />
+                <Button className="btnIniciar" label="Iniciar" loading={loading1} onClick={iniciarPipeline} />
             </div>
         </>
     );

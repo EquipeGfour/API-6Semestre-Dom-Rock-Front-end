@@ -4,7 +4,7 @@ import Navbar from "../../components/navbar/navbar";
 
 import { DataTableScrollDemo } from "../../components/resultado-processamento/resultado-processamento";
 
-import { FileUploadDemo } from "../../components/upload/upload";
+import FileUploadDemo from "../../components/upload/upload";
 import ProgressoBarra from "../../components/progress-bar/progressBar";
 
 

@@ -1,8 +1,6 @@
 <p align="center">
 <h1 align="center"> API Dom Rock - FrontEnd </h1>
 
- - Repositório destinado ao Front-End da Aplicação para a Dom Rock.
-
 ## Executando o Frontend do Projeto
 
 **Para executar o frontend deste projeto, siga estas etapas:**

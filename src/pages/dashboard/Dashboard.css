@@ -1,0 +1,65 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid #02021d; */
+    border-radius: 6px;
+    width: 67%;
+    height: auto;
+    margin: 0 auto;
+    margin-left: 500px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.filtros {
+    display: flex;
+    border: 1px solid #a6d108;
+    height:200px;
+
+}
+
+.card-recomendacoes,
+.card-grafico,
+.card-availacoes {
+    border: 1px solid #a6d108;
+    border-radius: 6px;
+    width: 19%;
+    height: 200px;
+    margin-top: 240px;
+}
+
+.card-recomendacoes, .card-grafico{
+    margin-left: 40px;
+}
+
+.card-recomendacoes{
+    height:440px;
+    width: 25%;
+}
+
+.card-grafico{
+    height:440px;
+    width: 55%;
+}
+
+.card-ratings {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #a6d108;
+    border-radius: 6px;
+    width: 18%;
+    height: 200px;
+    margin-top: 280px;
+    
+}
+
+.card-sumarização {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #a6d108;
+    border-radius: 6px;
+    width: 100%;
+    height: 800px;
+    margin-top: 120px;
+    
+}

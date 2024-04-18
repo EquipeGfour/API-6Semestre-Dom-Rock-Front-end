@@ -19,7 +19,7 @@ const FileUploadDemo = () => {
         const formData = new FormData();
         formData.append('file', file);
         
-            axios.post('http://localhost:8000/document/inserir', formData)
+            axios.post('http://localhost:8000/dataset/inserir', formData)
             .then(response=> {
                 setDocid(response.data);
                 console.log(response.data);

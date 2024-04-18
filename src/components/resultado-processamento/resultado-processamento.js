@@ -17,7 +17,7 @@ export const DataTableScrollDemo = () => {
 
     const getResults = () => {
         if (docid.endPipeline){
-            axios.get(`http://localhost:8000/pre-processing/get?doc_id=${docid.id}`)
+            axios.get(`http://localhost:8000/pre-processing/get?dataset_id=${docid.id}`)
         .then(response=> {
             setPreprocessinfo(response.data);
         }).catch(error=> {

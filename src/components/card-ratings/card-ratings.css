@@ -1,0 +1,19 @@
+.rating{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.texto-rating{
+    margin-top: 8px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight:600;
+    color: #292D32;
+}
+
+.p-rating .p-rating-item.p-rating-item-active .p-rating-icon {
+    color: #FFEF75;
+}

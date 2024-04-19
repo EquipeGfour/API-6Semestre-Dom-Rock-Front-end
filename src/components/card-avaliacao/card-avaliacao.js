@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import"./card-avaliacao.css";
 
 const CardAvaliacao = () => {

@@ -2,6 +2,7 @@ import React from "react";
 import SidebarMenu from "../../components/sidebar/sidebar";
 import Navbar from "../../components/navbar/navbar";
 import "./Dashboard.css";
+import CardAvaliacao from "../../components/card-avaliacao/card-avaliacao";
 
 const Dashboard = () => {
 
@@ -13,7 +14,9 @@ const Dashboard = () => {
             </Navbar>
             <div className="dashboard-container">
                 <div className="filtros">
-                    <div className="card-availacoes"></div>
+                    <div className="card-availacoes">
+                        <CardAvaliacao></CardAvaliacao>
+                    </div>
                     <div className="card-recomendacoes"></div>
                     <div className="card-grafico"></div>
                 </div>

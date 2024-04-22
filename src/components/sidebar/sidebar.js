@@ -40,7 +40,10 @@ const SidebarMenu = () => {
             </SidebarContent>
             <SidebarFooter>
                 <Menu iconShape="square">
-                    <MenuItem className="logout" icon={<HiLogout />}>Logout</MenuItem>
+                    <MenuItem className="logout" icon={<HiLogout />}>Logout
+                        <Link  to="/"></Link>
+                    </MenuItem>
+                    
                 </Menu>
             </SidebarFooter>
         </ProSidebar>

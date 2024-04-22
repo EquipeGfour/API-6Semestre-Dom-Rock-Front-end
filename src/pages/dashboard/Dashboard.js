@@ -4,6 +4,8 @@ import Navbar from "../../components/navbar/navbar";
 import "./Dashboard.css";
 import CardAvaliacao from "../../components/card-avaliacao/card-avaliacao";
 import CardRatings from "../../components/card-ratings/card-ratings";
+import GraficoRecomendacoes from "../../components/grafico-recomendacoes/grafico-recomendacoes";
+import GraficoColuna from "../../components/grafico-coluna/grafico-coluna";
 
 const Dashboard = () => {
 
@@ -21,11 +23,9 @@ const Dashboard = () => {
                     <div className="card-ratings">
                         <CardRatings></CardRatings>
                     </div>
-                    <div className="card-grafico"></div>
+                <GraficoColuna></GraficoColuna>
                 </div>
-                <div className="card-recomendacoes">
-                    
-                </div>
+                <GraficoRecomendacoes></GraficoRecomendacoes>
                 <div className="card-sumarização"></div>
             </div>
         </>

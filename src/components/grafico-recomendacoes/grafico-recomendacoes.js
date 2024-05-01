@@ -6,18 +6,20 @@ import "./grafico-recomendacoes.css";
 const GraficoRecomendacoes = () => {
 
     const [chartData] = useState({
-        labels: ['Positivas', 'Negativas'],
+        labels: ['Positivas', 'Negativas', 'Neutro'],
         datasets: [
             {
-                data: [300, 50],
+                data: [300, 50, 50],
                 backgroundColor: [
                     "#BADA55",
                     "#DC3146",
+                    "#D9D9D9"
                     
                 ],
                 hoverBackgroundColor: [
                     "#BADA55",
                     "#DC3146",
+                    "#D9D9D9"
 
                 ]
             }]

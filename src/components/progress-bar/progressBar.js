@@ -21,7 +21,7 @@ const ProgressoBarra = () => {
 
     const iniciarPipeline = () => {
         onLoadingClick1()
-        axios.post(`http://localhost:8001/preprocessing/start?doc_id=${docid.id}`)
+        axios.post(`http://localhost:8001/preprocessing/start?dataset_id=${docid.id}`)
         .then(response=> {
             docid.endPipeline=true;
             setDocid(prevValue=>({...prevValue, ...docid}));

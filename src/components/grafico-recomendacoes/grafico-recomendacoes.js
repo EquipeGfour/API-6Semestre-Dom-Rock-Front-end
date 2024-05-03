@@ -20,6 +20,7 @@ const GraficoRecomendacoes = () => {
                     "#BADA55",
                     "#D9D9D9",
                     "#FFFFF",
+
                 ]
             }]
     });

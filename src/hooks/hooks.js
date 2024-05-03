@@ -11,4 +11,9 @@ function usePreprocessInfo() {
     return context;
 }
 
-export  {useDocs, usePreprocessInfo};
+function useReviewsInfo(){
+    const context = useContext(Contexto);
+    return context;
+}
+
+export  {useDocs, usePreprocessInfo, useReviewsInfo};

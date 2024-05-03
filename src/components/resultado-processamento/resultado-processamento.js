@@ -19,7 +19,10 @@ export const DataTableScrollDemo = () => {
         if (docid.endPipeline){
             axios.get(`http://localhost:8000/pre-processing/get?dataset_id=${docid.id}`)
         .then(response=> {
-            setPreprocessinfo(response.data);
+            const data = response.data.map(item => {
+                return { ...item, output: JSON.stringify(item.output) };
+            })
+            setPreprocessinfo(data);
         }).catch(error=> {
             console.log(error);
         })}            
@@ -38,9 +41,9 @@ export const DataTableScrollDemo = () => {
             <div className='fora'>
             <DataTable value={preprocessinfo} scrollable scrollHeight="350px" loading={loading}>
                 <Column field="input" header="Entrada"></Column>
-                <Column field="output" header="Saida"></Column>
-                <Column field="step" header="Etapa"></Column>
+                <Column resizeable field="output" header="Saida"></Column>
                 <Column field="processing_time" header="Tempo"></Column>
+                <Column field="review_type" header="Tipo"></Column>
             </DataTable>
             </div>
         </div>

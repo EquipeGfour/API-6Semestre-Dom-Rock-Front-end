@@ -12,7 +12,7 @@ const Login = () => {
     const [senha, setSenha] = useState('');
     const navigate = useNavigate();
     const toast = useRef(null);
-
+    const loginButtonRef = useRef(null);
 
 
     const realizarLogin = ({navigation}) =>{
@@ -34,13 +34,25 @@ const Login = () => {
         })
     }
 
+
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            realizarLogin();
+        }
+    }
+
+    const preencherLogin = () => {
+        setEmail('natalirabessa@gmail.com');
+        setSenha('abcd0102');
+    }
+
     return (
         <>
             <Toast ref={toast} />
             <div className="container">
                 <div className="card-login">
                     <div className="card-logo">
-                        <img className="logo-login" src={LogoLogin}></img>
+                        <img className="logo-login" src={LogoLogin} onClick={preencherLogin}></img>
                         <div className="logo-text"> 
                             <p>Esta é uma área restrita para usuários cadastrados.</p>
                             <p>Informe seu usuário e senha para obter acesso ao sistema</p>

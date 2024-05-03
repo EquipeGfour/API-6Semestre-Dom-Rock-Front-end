@@ -13,12 +13,12 @@ const GraficoRecomendacoes = () => {
                 data: [],
                 backgroundColor: [
                     "#BADA55",
-                    "#DC3146",
+                    "#D9D9D9",
                     "#FFFFF",
                 ],
                 hoverBackgroundColor: [
                     "#BADA55",
-                    "#DC3146",
+                    "#D9D9D9",
                     "#FFFFF",
                 ]
             }]
@@ -47,12 +47,12 @@ const GraficoRecomendacoes = () => {
                         backgroundColor: [
                             "#BADA55",
                             "#DC3146",
-                            "#FF00FF",
+                            "#D9D9D9",
                         ],
                         hoverBackgroundColor: [
                             "#BADA55",
                             "#DC3146",
-                            "#FF00FF",
+                            "#D9D9D9",
                         ]
                     }]
             });

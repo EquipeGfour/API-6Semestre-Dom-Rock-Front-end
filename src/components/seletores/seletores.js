@@ -81,82 +81,82 @@ const Seletores = () => {
             }) 
     }
 
-    const getAllProductsByCategory = () => {
-        axios.get(`http://localhost:8000/products/all-by-category?id_category=${categoriaSelecionada}`)
+    const getAllProductsByCategory = (categoria) => {
+        axios.get(`http://localhost:8000/products/all-by-category?id_category=${categoria}`)
             .then (response => {
                 setProdutos(response.data)
             }).catch(error => {
                 console.error ('Erro ao buscar os produtos')
             })
     }
-    const getAllProductsBySubCategory = () => {
-        axios.get(`http://localhost:8000/products/all-by-subcategory?id_subcategory=${subCategoriaSelecionada}`)
+    const getAllProductsBySubCategory = (valor_subcategoria) => {
+        axios.get(`http://localhost:8000/products/all-by-subcategory?id_subcategory=${valor_subcategoria}`)
             .then (response => {
                 setProdutos(response.data)
             }).catch(error => {
                 console.error ('Erro ao buscar os produtos')
             })
+    }
+
+    const getAllCategories = () => {
+        axios.get('http://localhost:8000/category/all')
+        .then(response => {
+            setCategorias(response.data);
+        }).catch(error => {
+            console.error('Erro ao buscar categorias:', error);
+        });
+    }
+
+    const getAllSubcategoriesByCategory = (valor_categoria) => {        
+        axios.get(`http://localhost:8000/subcategory/all-by-category?id_category=${valor_categoria}`)
+        .then(response => {
+            setSubCategorias(response.data);
+        }).catch(error => {
+            console.error('Erro ao buscar subcategorias:', error);
+        });
     }
     
+    const handleProductChange = (e) => {
+        setProdutoSelecionado(e.value)
+    }
+
+    const handleSubCategoryChange = (e) => {
+        setSubCategoriaSelecionada(e.value)
+        getAllProductsBySubCategory(e.value);
+    }
+
+    const handleCategoryChange = (e) => {
+        setCategoriaSelecionada(e.value)
+        getAllSubcategoriesByCategory(e.value);
+        getAllProductsByCategory(e.value);
+    }
+
     useEffect(() => {
-        axios.get('http://localhost:8000/category/all')
-            .then(response => {
-                setCategorias(response.data);
-            }).catch(error => {
-                console.error('Erro ao buscar categorias:', error);
-            });
+        getAllCategories();
     }, []);
 
-    useEffect(() => {
-        if (categoriaSelecionada) {
-            axios.get(`http://localhost:8000/subcategory/all-by-category?id_category=${categoriaSelecionada}`)
-                .then(response => {
-                    setSubCategorias(response.data);
-                }).catch(error => {
-                    console.error('Erro ao buscar subcategorias:', error);
-                });
-        }
-    }, [categoriaSelecionada]);
 
-    useEffect(() => {
-        if(categoriaSelecionada && subCategoriaSelecionada){
-            console.log(subCategoriaSelecionada);
-
-            getAllProductsBySubCategory();
-        }
-        if(categoriaSelecionada){
-            getAllProductsByCategory();
-        }
-
-    },[categoriaSelecionada, subCategoriaSelecionada])
-
-    useEffect(() => {
-        if (subCategoriaSelecionada) {
-            getAllProductsBySubCategory();
-        }
-    }, [subCategoriaSelecionada]);
-    
 
     return (
         <>
             <Toast ref={toast} />
-            <div className="seletores">
+            <div style={{width:'8%'}} className="seletores">
                 <h5>Categoria</h5>
-                <Dropdown value={categoriaSelecionada} options={categorias.map(cat => ({ label: cat.category, value: cat.id }))} onChange={(e) => setCategoriaSelecionada(e.value)} placeholder="Selecione" />
+                <Dropdown  value={categoriaSelecionada} options={categorias.map(cat => ({ label: cat.category, value: cat.id }))} onChange={handleCategoryChange} placeholder="Selecione" />
             </div>
-            <div className="seletores">
+            <div style={{width:'8%'}} className="seletores">
                 <h5>Sub-Categoria</h5>
-                <Dropdown value={subCategoriaSelecionada} options={subCategorias.map(subcat => ({ label: subcat.subcategory, value: subcat.id }))} onChange={(e) => setSubCategoriaSelecionada(e.value)} placeholder="Selecione" />
+                <Dropdown value={subCategoriaSelecionada} options={subCategorias.map(subcat => ({ label: subcat.subcategory, value: subcat.id }))} onChange={handleSubCategoryChange} placeholder="Selecione" />
             </div>
-            <div className="seletores"> 
+            <div style={{width:'8%'}} className="seletores"> 
             <h5>Produto</h5>           
-            <Dropdown value={produtoSelecionado} options={produtos.map(prod => ({label: prod.name, value:prod }))} onChange={(e) => setProdutoSelecionado(e.value)} placeholder="Selecione" />
+            <Dropdown value={produtoSelecionado} options={produtos.map(prod => ({label: prod.name, value:prod }))} onChange={handleProductChange} placeholder="Selecione" />
         </div>
-        <div className="seletores"> 
+        <div style={{width:'8%'}} className="seletores"> 
             <h5>Estado</h5>           
-            <Dropdown value={estadoSelecionado} options={estados} onChange={(e) => setEstadoSelecionado(e.value)} optionLabel="nome" placeholder="Selecione" />
+            <Dropdown showClear  value={estadoSelecionado} options={estados} onChange={(e) => setEstadoSelecionado(e.value)} optionLabel="nome" placeholder="Selecione" />
         </div>
-        <div className="seletores"> 
+        <div style={{width:'8%'}} className="seletores"> 
             <h5>Demografia</h5>           
             <Dropdown value={demografia} options={demografia} onChange={""} optionLabel="name" placeholder="Selecione" />
         </div>

@@ -21,13 +21,15 @@ const Dashboard = () => {
                 <div className="filtros"> 
                     <Seletores/>
                 </div>
-                <div className="dashboard-screen">                               
-                    <div className="card-availacoes">
-                        <CardAvaliacao></CardAvaliacao>
-                    </div>
-                    <div className="card-ratings">
-                        <CardRatings></CardRatings>
-                    </div>
+                <div className="dashboard-screen">
+                    <div className="bloco-ratings">
+                        <div className="card-availacoes">
+                            <CardAvaliacao></CardAvaliacao>
+                        </div>
+                        <div className="card-ratings">
+                            <CardRatings></CardRatings>
+                        </div>  
+                    </div>                   
                     <GraficoColuna></GraficoColuna>
                 </div>                    
                 <div className="bloco-graficos">

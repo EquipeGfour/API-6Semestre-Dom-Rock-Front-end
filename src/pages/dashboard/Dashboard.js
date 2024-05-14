@@ -7,6 +7,8 @@ import CardRatings from "../../components/card-ratings/card-ratings";
 import GraficoRecomendacoes from "../../components/grafico-recomendacoes/grafico-recomendacoes";
 import GraficoColuna from "../../components/grafico-coluna/grafico-coluna";
 import Seletores from "../../components/seletores/seletores";
+import SumaricacaoSentenca from "../../components/sumarizacao-sentenca/sumarizacao-sentenca";
+import SumarizacaoPalavra from "../../components/sumarizacao-palavra/sumarizacao-palavra";
 
 const Dashboard = () => {
 
@@ -30,7 +32,14 @@ const Dashboard = () => {
                     <GraficoColuna></GraficoColuna>
                 </div>
                 <GraficoRecomendacoes></GraficoRecomendacoes>
-                {/* <div className="card-sumarização"></div> */}
+                <div className="card-sumarização">
+                    <div className="sumarizacao-palavra">
+                        <SumarizacaoPalavra className="sumarizacao-palavra" />
+                    </div>
+                    <div className="sumarizacao-sentenca">
+                        <SumaricacaoSentenca/>
+                    </div>
+                </div>
             </div>
         </>
     )

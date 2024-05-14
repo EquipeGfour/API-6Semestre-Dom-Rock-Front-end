@@ -1,0 +1,27 @@
+
+.p-button-success {
+    background-color: #BADA55 !important;
+    border: none !important;
+}
+
+.p-button-info {
+    background-color: #8A8A8A !important;
+    border: none !important;
+}
+
+.p-button-danger {
+    background-color: #F00E0E !important;
+    border: none !important;
+}
+
+.fora-palavra {
+    display: flex;
+    padding: 0 5px;
+}
+
+.fora-palavra .p-button {
+    margin-right: 20px;
+    width: 100px;
+    white-space: nowrap;
+    text-align: center;
+}

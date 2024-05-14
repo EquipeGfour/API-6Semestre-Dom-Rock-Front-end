@@ -48,3 +48,17 @@
     margin-top: 120px;
     
 }
+
+.sumarizacao-palavra {
+
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 32%; 
+
+}
+
+.sumarizacao-sentenca {
+
+}
+

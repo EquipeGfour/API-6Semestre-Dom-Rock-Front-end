@@ -7,6 +7,7 @@ import CardRatings from "../../components/card-ratings/card-ratings";
 import GraficoRecomendacoes from "../../components/grafico-recomendacoes/grafico-recomendacoes";
 import GraficoColuna from "../../components/grafico-coluna/grafico-coluna";
 import Seletores from "../../components/seletores/seletores";
+import GraficoRadar from "../../components/grafico-radar/grafico-radar";
 
 const Dashboard = () => {
 
@@ -20,16 +21,24 @@ const Dashboard = () => {
                 <div className="filtros"> 
                     <Seletores/>
                 </div>
-                <div className="dashboard-screen">                               
-                    <div className="card-availacoes">
-                        <CardAvaliacao></CardAvaliacao>
-                    </div>
-                    <div className="card-ratings">
-                        <CardRatings></CardRatings>
-                    </div>
+                <div className="dashboard-screen">
+                    <div className="bloco-ratings">
+                        <div className="card-availacoes">
+                            <CardAvaliacao></CardAvaliacao>
+                        </div>
+                        <div className="card-ratings">
+                            <CardRatings></CardRatings>
+                        </div>  
+                    </div>                   
                     <GraficoColuna></GraficoColuna>
+                </div>                    
+                <div className="bloco-graficos">
+                    <GraficoRecomendacoes></GraficoRecomendacoes>
+                    <div className="card-radar">
+                        <GraficoRadar></GraficoRadar>                    
+                    </div>                  
                 </div>
-                <GraficoRecomendacoes></GraficoRecomendacoes>
+
                 {/* <div className="card-sumarização"></div> */}
             </div>
         </>

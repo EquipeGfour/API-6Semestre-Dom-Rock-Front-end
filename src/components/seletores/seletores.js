@@ -38,7 +38,13 @@ const Seletores = () => {
     { sigla: 'SP', nome: 'São Paulo' },
     { sigla: 'SE', nome: 'Sergipe' },
     { sigla: 'TO', nome: 'Tocantins' }]);
-    const [demografia, setDemografia] = useState([]);
+    const [idade, setIdade] = useState(null);
+    const selectAge = [
+        {label: "15-30 anos", value: "15-30 anos"},
+        {label: "30-45 anos", value: "30-45 anos"},
+        {label: "45-60 anos", value: "45-60 anos"},
+        {label: "Rafa ou mais", value: "60+ anos"},
+    ]
     const {reviewsInfo, setReviewsInfo} = useReviewsInfo();
 
     const [categoriaSelecionada, setCategoriaSelecionada] = useState(null);
@@ -135,6 +141,10 @@ const Seletores = () => {
         getAllCategories();
     }, []);
 
+    const onAgeChange = (e) => {
+        setIdade(e.value);
+    }
+
 
 
     return (
@@ -157,8 +167,8 @@ const Seletores = () => {
             <Dropdown showClear  value={estadoSelecionado} options={estados} onChange={(e) => setEstadoSelecionado(e.value)} optionLabel="nome" placeholder="Selecione" />
         </div>
         <div style={{width:'8%'}} className="seletores"> 
-            <h5>Demografia</h5>           
-            <Dropdown value={demografia} options={demografia} onChange={""} optionLabel="name" placeholder="Selecione" />
+            <h5>Idade</h5>           
+            <Dropdown value={idade} options={selectAge} onChange={onAgeChange} optionLabel="label" placeholder="Selecione" />
         </div>
             <Button className="btn-seletores" onClick={filtrar}>Filtrar</Button>
         </>

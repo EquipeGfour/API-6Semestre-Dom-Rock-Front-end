@@ -14,10 +14,25 @@
     border: none !important;
 }
 
+.container-palavra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.titulo-sumarizacao {
+    text-align: center;
+}
+
 .fora-palavra {
     display: flex;
-    padding: 0 5px;
+    justify-content: center;
+    margin-top: 20px;
 }
+
+
 
 .fora-palavra .p-button {
     margin-right: 20px;

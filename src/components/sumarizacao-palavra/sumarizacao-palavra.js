@@ -21,14 +21,16 @@ const SumaricacaoPalavra = () => {
 
     return (
         <>
+            <div className="container-palavras">
+            <h2 className="titulo-sumarizacao">Sumarização</h2>
             <div className='fora-palavra'>
                 <Button label={palavras[0]} className="p-button-success" />
                 <Button label={palavras[1]} className="p-button-success" />
                 <Button label={palavras[2]} className="p-button-info" />
                 <Button label={palavras[3]} className="p-button-danger" />
                 <Button label={palavras[4]} className="p-button-danger" />
-                
             </div>
+        </div>
         </>
     );
 };

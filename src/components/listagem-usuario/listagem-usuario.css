@@ -1,0 +1,41 @@
+
+.fora-usuario{
+    border: 1px solid #d9d9d9;
+    border-top-left-radius: 10px;
+    width: 70rem;
+    margin-left: 30rem;
+    margin-top: 50px;
+}
+
+/* Estilos para as células da tabela */
+.datatable-scroll-demo .p-datatable tbody tr td {
+    border-radius: 10;
+}
+
+/* Estilos para o cabeçalho da tabela */
+.datatable-scroll-demo .p-datatable thead th {
+    background-color: #292D32; /* Cor de fundo para o cabeçalho da tabela */
+    color: #FFFFFF;
+}
+
+.datatable-scroll-demo .p-datatable thead th:first-child{
+    border-top-left-radius: 10px;
+}
+.datatable-scroll-demo .p-datatable thead th:last-child{
+    border-top-right-radius: 10px;
+}
+
+.fora-usuario .botao-editar{
+    background-color: white !important;
+    color: black;
+    margin-right: 8px;
+}
+
+.fora-usuario .botao-excluir{
+    background-color: white !important;
+    color: red
+}
+
+.fora-usuario .p-button{
+    border: 0 !important;
+}

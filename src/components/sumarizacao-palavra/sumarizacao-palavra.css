@@ -1,0 +1,42 @@
+
+.p-button-success {
+    background-color: #BADA55 !important;
+    border: none !important;
+}
+
+.p-button-info {
+    background-color: #8A8A8A !important;
+    border: none !important;
+}
+
+.p-button-danger {
+    background-color: #F00E0E !important;
+    border: none !important;
+}
+
+.container-palavra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.titulo-sumarizacao {
+    text-align: center;
+}
+
+.fora-palavra {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+
+.fora-palavra .p-button {
+    margin-right: 20px;
+    width: 100px;
+    white-space: nowrap;
+    text-align: center;
+}

@@ -68,6 +68,32 @@
     
 }
 
+
+.sumarizacao-palavra {
+
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 32%; 
+
+}
+
+.sumarizacao-sentenca {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 .bloco-graficos {
     display: flex;
     flex-direction: row;
@@ -76,3 +102,10 @@
     height: 600px;
     margin-top: 320px;    
 }
+
+
+
+
+
+
+

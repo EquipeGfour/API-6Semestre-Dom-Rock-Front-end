@@ -10,8 +10,8 @@
     border-radius: 6px;
     display: flex;
     flex-direction: column;
-    height:520px;
-    width: 66%;
+    height:420px;
+    width: 100%;
 }
 
 
@@ -21,6 +21,7 @@
     font-size: 20px;
     font-weight: 600;
     color: #292D32;
+    margin-top: 10px!important;
 }
 
 .estilo-grafico{
@@ -33,7 +34,7 @@
 
 @media screen and (min-width: 1340px) {
     .estilo-grafico {
-        width: 90% !important; /* Ajustar largura para 60% da tela */
+        width: 60% !important; /* Ajustar largura para 60% da tela */
         margin-top: 30px !important;
     }
 }
@@ -49,7 +50,7 @@
 /* Media query para telas ainda maiores */
 @media screen and (min-width: 2000px) {
     .estilo-grafico {
-        width: 80% !important; /* Ajustar largura para 60% da tela */
+        width: 48% !important; /* Ajustar largura para 60% da tela */
         margin-top: 10px !important;
     }
 }

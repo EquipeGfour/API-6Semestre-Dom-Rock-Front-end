@@ -32,7 +32,7 @@ const Dashboard = () => {
                 <div className="filtros"> 
                     <Seletores/>
                 </div>
-                <div className="dashboard-screen">
+                {/* <div className="dashboard-screen">
                     <div className="bloco-ratings">
                         <div className="card-availacoes">
                             <CardAvaliacao></CardAvaliacao>
@@ -48,9 +48,8 @@ const Dashboard = () => {
                     <div className="card-radar">
                         <GraficoRadar></GraficoRadar>                    
                     </div>                  
-                </div>
+                </div> */}
 
-                <GraficoRecomendacoes></GraficoRecomendacoes>
                 <div className="card-sumarização">
                     <div className="sumarizacao-palavra">
                         <SumarizacaoPalavra className="sumarizacao-palavra" />

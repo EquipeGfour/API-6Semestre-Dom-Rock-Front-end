@@ -3,9 +3,13 @@ import React, { useState, useEffect } from "react";
 import { Chart } from 'primereact/chart';
 import "./grafico-radar.css";
 
+
+// A={"Masculino":[65, 59, 90, 81,],
+//     "Feminino":[28, 48, 40, 19,]}
+
 const GraficoRadar = () => {
     const [chartData] = useState({
-        labels: ['Qualidade', 'Preço', 'Entrega','Garantia', 'Devolução'],
+        labels: ['15-30 anos', '31-45 anos', '46-60 anos', '+60 anos '],
         datasets: [
             {
                 label: 'Masculino',
@@ -15,7 +19,7 @@ const GraficoRadar = () => {
                 pointBorderColor: '#fff',
                 pointHoverBackgroundColor: '#fff',
                 pointHoverBorderColor: 'rgba(179,181,198,1)',
-                data: [65, 59, 90, 81, 56,]
+                data: [65, 59, 90, 81,]
             },
             {
                 label: 'Feminino',
@@ -25,7 +29,7 @@ const GraficoRadar = () => {
                 pointBorderColor: '#fff',
                 pointHoverBackgroundColor: '#fff',
                 pointHoverBorderColor: 'rgba(255,99,132,1)',
-                data: [28, 48, 40, 19, 96, ]
+                data: [28, 48, 40, 19,]
             }
         ]
     });

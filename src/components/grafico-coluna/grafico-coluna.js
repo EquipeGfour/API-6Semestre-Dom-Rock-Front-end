@@ -10,7 +10,8 @@ const GraficoColuna = () => {
     useEffect(() => {
         const getGraficoColunaResults = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/reviewers/get_top5_statesReviews');
+                const response = await axios.get('http://localhost:8000/review/get_top5_statesReviews');
+                console.log(response.data);
                 const data = response.data;
                 const tempGraficoColuna = [];
                 const tempEstados = [];

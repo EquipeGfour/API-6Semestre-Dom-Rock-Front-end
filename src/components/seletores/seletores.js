@@ -150,26 +150,23 @@ const Seletores = () => {
     return (
         <>
             <Toast ref={toast} />
-            <div style={{width:'8%'}} className="seletores">
+            <div className="seletores">
                 <h5>Categoria</h5>
                 <Dropdown  value={categoriaSelecionada} options={categorias.map(cat => ({ label: cat.category, value: cat.id }))} onChange={handleCategoryChange} placeholder="Selecione" />
             </div>
-            <div style={{width:'8%'}} className="seletores">
+            <div className="seletores">
                 <h5>Sub-Categoria</h5>
                 <Dropdown value={subCategoriaSelecionada} options={subCategorias.map(subcat => ({ label: subcat.subcategory, value: subcat.id }))} onChange={handleSubCategoryChange} placeholder="Selecione" />
             </div>
-            <div style={{width:'8%'}} className="seletores"> 
+            <div className="seletores"> 
             <h5>Produto</h5>           
             <Dropdown value={produtoSelecionado} options={produtos.map(prod => ({label: prod.name, value:prod }))} onChange={handleProductChange} placeholder="Selecione" />
         </div>
-        <div style={{width:'8%'}} className="seletores"> 
+        <div className="seletores"> 
             <h5>Estado</h5>           
             <Dropdown showClear  value={estadoSelecionado} options={estados} onChange={(e) => setEstadoSelecionado(e.value)} optionLabel="nome" placeholder="Selecione" />
         </div>
-        <div style={{width:'8%'}} className="seletores"> 
-            <h5>Idade</h5>           
-            <Dropdown value={idade} options={selectAge} onChange={onAgeChange} optionLabel="label" placeholder="Selecione" />
-        </div>
+
             <Button className="btn-seletores" onClick={filtrar}>Filtrar</Button>
         </>
     );

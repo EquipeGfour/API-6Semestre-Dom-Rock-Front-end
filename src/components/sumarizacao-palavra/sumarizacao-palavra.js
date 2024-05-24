@@ -98,10 +98,9 @@ const SumaricacaoPalavra = () => {
     return (
         <>
             <div className="container-palavras">
-                <div className='hello'>
                     <h1 className="titulo-sumarizacao">Sumarização</h1>
-                    <Button icon="pi pi-history" className="botao-reload" onClick={resetarFiltros} />
-                </div>
+                    {/* <Button icon="pi pi-history" className="botao-reload" onClick={resetarFiltros} /> */}
+
                 <div className='fora-palavra'>
                     {palavras.map((p, i) => (
                         <Button key={i} label={p.palavra} className={verificarSentimento(p.sentimento)} onClick={() => fitrarSumarizacaoPalavra(p.palavra)} />

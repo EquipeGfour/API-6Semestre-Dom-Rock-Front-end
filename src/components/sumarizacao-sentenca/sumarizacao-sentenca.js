@@ -33,7 +33,7 @@ const SumaricacaoSentenca = () => {
     return (
         <div className="card-container">
             {shouldRenderCarousel ? (
-                <Carousel value={sumarizacaoReviews} itemTemplate={cardTemplate} numScroll={3} numVisible={3} responsiveOptions={responsiveSettings} />
+                <Carousel value={sumarizacaoReviews} itemTemplate={cardTemplate} numScroll={3} numVisible={4} responsiveOptions={responsiveSettings} />
             ) : (
                 sumarizacaoReviews.map((review, index) => (
                     <div key={index} className="single-card">

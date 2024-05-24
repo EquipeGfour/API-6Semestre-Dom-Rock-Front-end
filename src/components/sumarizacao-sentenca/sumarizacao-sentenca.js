@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Card } from 'primereact/card';
 import { Carousel } from 'primereact/carousel';
 import axios from 'axios';
 import './sumarizacao-sentenca.css';
 import { ScrollPanel } from 'primereact/scrollpanel';
 import { useSumarizacaoReviews } from '../../hooks/hooks';
+import { Button } from 'primereact/button';
 
 const SumaricacaoSentenca = () => {
     const { sumarizacaoReviews, setSumarizacaoReviews } = useSumarizacaoReviews();
@@ -13,7 +14,7 @@ const SumaricacaoSentenca = () => {
         return (
             <div>
                 <Card className='cardFora' title={''}>
-                    <ScrollPanel >
+                    <ScrollPanel>
                         <p className='m-0'>{card}</p>
                     </ScrollPanel>
                 </Card>
@@ -27,15 +28,21 @@ const SumaricacaoSentenca = () => {
         { breakpoint: '480px', numVisible: 1, numScroll: 1 }
     ];
 
+    const shouldRenderCarousel = sumarizacaoReviews.length > 2;
+
     return (
-        <div>
-            <Carousel value={sumarizacaoReviews} itemTemplate={cardTemplate} numScroll={3} numVisible={5} responsiveOptions={responsiveSettings} />
+        <div className="card-container">
+            {shouldRenderCarousel ? (
+                <Carousel value={sumarizacaoReviews} itemTemplate={cardTemplate} numScroll={3} numVisible={3} responsiveOptions={responsiveSettings} />
+            ) : (
+                sumarizacaoReviews.map((review, index) => (
+                    <div key={index} className="single-card">
+                        {cardTemplate(review)}
+                    </div>
+                ))
+            )}
         </div>
     );
 };
 
 export default SumaricacaoSentenca;
-
-
-
-

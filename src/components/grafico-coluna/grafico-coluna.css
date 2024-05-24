@@ -34,8 +34,8 @@
 
 @media screen and (min-width: 1340px) {
     .estilo-grafico {
-        width: 60% !important; /* Ajustar largura para 60% da tela */
-        margin-top: 30px !important;
+        width: 70% !important; /* Ajustar largura para 60% da tela */
+        margin-top: 15px !important;
     }
 }
 
@@ -50,7 +50,7 @@
 /* Media query para telas ainda maiores */
 @media screen and (min-width: 2000px) {
     .estilo-grafico {
-        width: 48% !important; /* Ajustar largura para 60% da tela */
+        width: 54% !important; /* Ajustar largura para 60% da tela */
         margin-top: 10px !important;
     }
 }

@@ -166,7 +166,6 @@ const Seletores = () => {
             <h5>Estado</h5>           
             <Dropdown showClear  value={estadoSelecionado} options={estados} onChange={(e) => setEstadoSelecionado(e.value)} optionLabel="nome" placeholder="Selecione" />
         </div>
-
             <Button className="btn-seletores" onClick={filtrar}>Filtrar</Button>
         </>
     );

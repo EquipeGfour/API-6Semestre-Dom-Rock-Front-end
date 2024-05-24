@@ -10,7 +10,7 @@ const GraficoColuna = () => {
     useEffect(() => {
         const getGraficoColunaResults = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/review/get_top5_statesReviews');
+                const response = await axios.get('http://localhost:8000/review/get_states_and_reviews');
                 console.log(response.data);
                 const data = response.data;
                 const tempGraficoColuna = [];
@@ -57,7 +57,7 @@ const GraficoColuna = () => {
 
     return(
         <div className="card-grafico card d-flex justify-content-center align-items-center grafico-container">
-            <span className="texto-grafico">Top 5 Estados - Número de Avaliações</span>
+            <span className="texto-grafico">Gráfico - Avaliações por Estados</span>
             <div className="grafico-coluna">
                 <Chart className="estilo-grafico" type="bar" data={multiAxisData} options={options}/>
             </div>

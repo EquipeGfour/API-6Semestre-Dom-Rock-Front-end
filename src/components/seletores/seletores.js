@@ -5,7 +5,7 @@ import { Dropdown } from 'primereact/dropdown';
 import "./seletores.css";
 import { Button } from 'primereact/button';
 import { Toast } from 'primereact/toast';
-import { useReviewsInfo } from "../../hooks/hooks";
+import { useReviewsInfo, useSumarizacaoProd } from "../../hooks/hooks";
 
 const Seletores = () => {
     const [categorias, setCategorias] = useState([]);
@@ -46,6 +46,7 @@ const Seletores = () => {
         {label: "Rafa ou mais", value: "60+ anos"},
     ]
     const {reviewsInfo, setReviewsInfo} = useReviewsInfo();
+    const {sumarizacaoProd, setSumarizacaoProd} = useSumarizacaoProd();
 
     const [categoriaSelecionada, setCategoriaSelecionada] = useState(null);
     const [subCategoriaSelecionada, setSubCategoriaSelecionada] = useState(null);
@@ -124,6 +125,7 @@ const Seletores = () => {
     
     const handleProductChange = (e) => {
         setProdutoSelecionado(e.value)
+        setSumarizacaoProd(e.value)
     }
 
     const handleSubCategoryChange = (e) => {
@@ -150,25 +152,21 @@ const Seletores = () => {
     return (
         <>
             <Toast ref={toast} />
-            <div style={{width:'8%'}} className="seletores">
+            <div className="seletores">
                 <h5>Categoria</h5>
                 <Dropdown  value={categoriaSelecionada} options={categorias.map(cat => ({ label: cat.category, value: cat.id }))} onChange={handleCategoryChange} placeholder="Selecione" />
             </div>
-            <div style={{width:'8%'}} className="seletores">
+            <div className="seletores">
                 <h5>Sub-Categoria</h5>
                 <Dropdown value={subCategoriaSelecionada} options={subCategorias.map(subcat => ({ label: subcat.subcategory, value: subcat.id }))} onChange={handleSubCategoryChange} placeholder="Selecione" />
             </div>
-            <div style={{width:'8%'}} className="seletores"> 
+            <div className="seletores"> 
             <h5>Produto</h5>           
             <Dropdown value={produtoSelecionado} options={produtos.map(prod => ({label: prod.name, value:prod }))} onChange={handleProductChange} placeholder="Selecione" />
         </div>
-        <div style={{width:'8%'}} className="seletores"> 
+        <div className="seletores"> 
             <h5>Estado</h5>           
             <Dropdown showClear  value={estadoSelecionado} options={estados} onChange={(e) => setEstadoSelecionado(e.value)} optionLabel="nome" placeholder="Selecione" />
-        </div>
-        <div style={{width:'8%'}} className="seletores"> 
-            <h5>Idade</h5>           
-            <Dropdown value={idade} options={selectAge} onChange={onAgeChange} optionLabel="label" placeholder="Selecione" />
         </div>
             <Button className="btn-seletores" onClick={filtrar}>Filtrar</Button>
         </>

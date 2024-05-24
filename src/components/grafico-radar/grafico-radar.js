@@ -2,10 +2,37 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Chart } from 'primereact/chart';
 import "./grafico-radar.css";
+import { useSumarizacaoProd, useSumarizacaoReviews, useReviewsInfo } from '../../hooks/hooks';
 
 const GraficoRadar = () => {
-    const [chartData] = useState({
-        labels: ['Qualidade', 'Preço', 'Entrega','Garantia', 'Devolução'],
+    const [produtoMasculino, setReviewsMasculino] = useState([]);
+    const [produtoFeminino, setReviewsFeminino] = useState([]);
+    const { sumarizacaoProd } = useSumarizacaoProd();
+    const { reviewsInfo } = useReviewsInfo();
+
+    const getGraficoRadarResults = async () => {
+        if (reviewsInfo && 'id' in sumarizacaoProd) {
+            try {
+                const response = await axios.get(`http://localhost:8001/products/genres?product_id=${sumarizacaoProd.id}`);
+                console.log(response.data);
+                if (response.data.Masculino.length > 0) {
+                    setReviewsMasculino(response.data.Masculino);
+                } else {
+                    setReviewsMasculino([]);
+                }
+                if (response.data.Feminino.length > 0) {
+                    setReviewsFeminino(response.data.Feminino);
+                } else {
+                    setReviewsFeminino([]);
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        }
+    };
+
+    const chartData = {
+        labels: ['15-30 anos', '31-45 anos', '46-60 anos', '+60 anos '],
         datasets: [
             {
                 label: 'Masculino',
@@ -15,7 +42,7 @@ const GraficoRadar = () => {
                 pointBorderColor: '#fff',
                 pointHoverBackgroundColor: '#fff',
                 pointHoverBorderColor: 'rgba(179,181,198,1)',
-                data: [65, 59, 90, 81, 56,]
+                data: produtoMasculino
             },
             {
                 label: 'Feminino',
@@ -25,12 +52,12 @@ const GraficoRadar = () => {
                 pointBorderColor: '#fff',
                 pointHoverBackgroundColor: '#fff',
                 pointHoverBorderColor: 'rgba(255,99,132,1)',
-                data: [28, 48, 40, 19, 96, ]
+                data: produtoFeminino
             }
         ]
-    });
+    };
 
-    const [lightOptions] = useState({
+    const lightOptions = {
         plugins: {
             legend: {
                 labels: {
@@ -51,16 +78,20 @@ const GraficoRadar = () => {
                 }
             }
         }
-    });
-    
-    return(
+    };
+
+    useEffect(() => {
+        getGraficoRadarResults();
+    }, [reviewsInfo, sumarizacaoProd]);
+
+    return (
         <div className="card-grafico-radar card d-flex justify-content-center align-items-center grafico-container">
-            <span className="texto-grafico-radar">Radar das Avaliações</span>
-            <div className=" grafico-radar card flex justify-content-center">
-                <Chart type="radar" className="estilo-grafico-radar" data={chartData} options={lightOptions}  />
+            <span className="texto-grafico-radar">Gráfico - Gênero x Idade</span>
+            <div className="grafico-radar card flex justify-content-center">
+                <Chart type="radar" className="estilo-grafico-radar" data={chartData} options={lightOptions} />
             </div>
         </div>
-    )
+    );
 };
 
 export default GraficoRadar;

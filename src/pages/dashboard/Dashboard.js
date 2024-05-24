@@ -50,7 +50,7 @@ const Dashboard = () => {
                     </div>                  
                 </div>
 
-                <GraficoRecomendacoes></GraficoRecomendacoes>
+                
                 <div className="card-sumarização">
                     <div className="sumarizacao-palavra">
                         <SumarizacaoPalavra className="sumarizacao-palavra" />

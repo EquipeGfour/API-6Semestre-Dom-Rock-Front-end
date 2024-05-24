@@ -49,7 +49,6 @@ const Dashboard = () => {
                         <GraficoRadar></GraficoRadar>                    
                     </div>                  
                 </div>
-
                 
                 <div className="card-sumarização">
                     <div className="sumarizacao-palavra">
@@ -59,13 +58,6 @@ const Dashboard = () => {
                         <SumaricacaoSentenca/>
                     </div>
                 </div>
-
-
-
-
-
-                {/* <div className="card-sumarização"></div> */}
-
             </div>
         </>
     )

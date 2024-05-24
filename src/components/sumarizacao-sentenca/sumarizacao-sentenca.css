@@ -1,6 +1,6 @@
 .card-container {
     display: flex;
-    justify-content: center; /* Centraliza os cards horizontalmente */
+    justify-content: center; /* Centraliza os cards horizontalmente */    
     flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha se não couberem horizontalmente */
 }
 

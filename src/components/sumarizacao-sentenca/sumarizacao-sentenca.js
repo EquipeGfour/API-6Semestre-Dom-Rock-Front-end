@@ -31,7 +31,7 @@ const SumaricacaoSentenca = () => {
     const shouldRenderCarousel = sumarizacaoReviews.length > 2;
 
     return (
-        <div className="card-container">
+        <>
             {shouldRenderCarousel ? (
                 <Carousel value={sumarizacaoReviews} itemTemplate={cardTemplate} numScroll={3} numVisible={4} responsiveOptions={responsiveSettings} />
             ) : (
@@ -41,7 +41,7 @@ const SumaricacaoSentenca = () => {
                     </div>
                 ))
             )}
-        </div>
+        </>
     );
 };
 

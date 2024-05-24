@@ -1,15 +1,20 @@
-.cardFora{
+.card-container {
+    display: flex;
+    justify-content: center; /* Centraliza os cards horizontalmente */
+    flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha se não couberem horizontalmente */
+}
+
+.cardFora {
     width: 14rem;
     margin-bottom: 3rem;
     height: 20rem;
     margin-top: 50px;
-    border: solid 0.5px grey ;
-    margin-left: 15%;
- 
+    border: solid 0.5px grey;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
-.m-0{
+.m-0 {
     height: 15rem;
     line-height: 1.3;
 }
-

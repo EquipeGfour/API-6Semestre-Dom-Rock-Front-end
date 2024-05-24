@@ -5,7 +5,7 @@ import { Dropdown } from 'primereact/dropdown';
 import "./seletores.css";
 import { Button } from 'primereact/button';
 import { Toast } from 'primereact/toast';
-import { useReviewsInfo } from "../../hooks/hooks";
+import { useReviewsInfo, useSumarizacaoProd } from "../../hooks/hooks";
 
 const Seletores = () => {
     const [categorias, setCategorias] = useState([]);
@@ -46,6 +46,7 @@ const Seletores = () => {
         {label: "Rafa ou mais", value: "60+ anos"},
     ]
     const {reviewsInfo, setReviewsInfo} = useReviewsInfo();
+    const {sumarizacaoProd, setSumarizacaoProd} = useSumarizacaoProd();
 
     const [categoriaSelecionada, setCategoriaSelecionada] = useState(null);
     const [subCategoriaSelecionada, setSubCategoriaSelecionada] = useState(null);
@@ -124,6 +125,7 @@ const Seletores = () => {
     
     const handleProductChange = (e) => {
         setProdutoSelecionado(e.value)
+        setSumarizacaoProd(e.value)
     }
 
     const handleSubCategoryChange = (e) => {

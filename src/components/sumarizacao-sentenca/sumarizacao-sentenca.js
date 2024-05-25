@@ -28,7 +28,7 @@ const SumaricacaoSentenca = () => {
         { breakpoint: '480px', numVisible: 1, numScroll: 1 }
     ];
 
-    const shouldRenderCarousel = sumarizacaoReviews.length > 2;
+    const shouldRenderCarousel = sumarizacaoReviews.length > 1;
 
     return (
         <>

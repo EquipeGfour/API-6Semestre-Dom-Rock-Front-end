@@ -1,0 +1,61 @@
+
+.p-button-success {
+    background-color: #BADA55 !important;
+    border: none !important;
+}
+
+.p-button-info {
+    background-color: #8A8A8A !important;
+    border: none !important;
+}
+
+.p-button-danger {
+    background-color: #F00E0E !important;
+    border: none !important;
+}
+
+.container-palavra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+}
+
+.titulo-sumarizacao {
+    text-align: center;
+}
+
+.fora-palavra {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    flex-wrap: wrap; 
+}
+
+.fora-palavra .p-button {
+    margin-right: 10px;
+    min-width: 100px;
+    white-space: nowrap;
+    text-align: center;
+    flex-grow: 1; 
+}
+
+.botao-reload{
+    position: absolute;
+    background-color: red !important;
+    border: none !important;
+    font-weight: bold;
+    color: white; 
+}
+
+.hello {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.hello .botao-reload{
+    
+}

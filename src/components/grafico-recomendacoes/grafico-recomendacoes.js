@@ -64,7 +64,7 @@ const GraficoRecomendacoes = () => {
         <div className="card-recomendacoes card d-flex justify-content-center align-items-center grafico-container">
             <span className="texto-recomendacoes">Análise de Reviews</span>
             <div className="grafico">
-                <Chart type="doughnut" data={chartData} options={lightOptions} style={{ width: '60%', height: '100%' }} />
+                <Chart type="doughnut" data={chartData} options={lightOptions} style={{ width: '100%', height: '100%' }} />
             </div>
         </div>
     );

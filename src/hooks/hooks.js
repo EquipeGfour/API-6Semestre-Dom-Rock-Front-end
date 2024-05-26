@@ -16,4 +16,16 @@ function useReviewsInfo(){
     return context;
 }
 
-export  {useDocs, usePreprocessInfo, useReviewsInfo};
+function useSumarizacaoProd(){
+    const context = useContext(Contexto);
+    return context;
+}
+//reviews sumarizadas
+
+function useSumarizacaoReviews(){
+    const context = useContext(Contexto);
+    return context;
+}
+
+
+export  {useDocs, usePreprocessInfo, useReviewsInfo, useSumarizacaoProd , useSumarizacaoReviews};

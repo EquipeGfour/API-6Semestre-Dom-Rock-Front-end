@@ -13,6 +13,8 @@ import {DataTableScrollDemo} from "../components/resultado-processamento/resulta
 
 
 import  FileUploadDemo  from "../components/upload/upload";
+import SumaricacaoSentenca from "../components/sumarizacao-sentenca/sumarizacao-sentenca";
+import SumaricacaoPalavra from "../components/sumarizacao-palavra/sumarizacao-palavra";
 
 
 export default function Rotas(){
@@ -27,6 +29,15 @@ export default function Rotas(){
             <Route path="cadastro-usuario" element={<CadastrarUsuario></CadastrarUsuario>}></Route>
             <Route path="editar-usuario" element={<EditarUsuario></EditarUsuario>}></Route>
             <Route path="processamento" element={<Processamento></Processamento>}></Route>
+            
+            
+            
+            
+            
+            
+            <Route path="sumarizacao-sentenca" element={<SumaricacaoSentenca></SumaricacaoSentenca>}></Route>
+            <Route path="sumarizacao-palavra" element={<SumaricacaoPalavra></SumaricacaoPalavra>}></Route>
+
 
 
             

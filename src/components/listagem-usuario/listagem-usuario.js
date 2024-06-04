@@ -44,8 +44,8 @@ export const ListaUsuario = () => {
     };
 
     return (
-        <div className="datatable-scroll-demo">
-            <div className='fora-usuario'>
+        <>
+            <div className=' fora-usuario datatable-scroll-demo'>
                 <DataTable value={usuarios} scrollable scrollHeight="350px">
                     <Column field="nome" header="Nome"></Column>
                     <Column field="email" header="E-mail"></Column>
@@ -53,6 +53,8 @@ export const ListaUsuario = () => {
                     <Column body={acoesBodyTemplate} header="Ações"></Column>
                 </DataTable>
             </div>
-        </div>
+            <Button label='Novo Usuario' className="botao-add" onClick={('')} />
+            
+        </>
     );
 };

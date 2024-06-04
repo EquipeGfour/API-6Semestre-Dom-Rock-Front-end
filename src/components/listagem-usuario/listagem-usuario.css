@@ -1,10 +1,7 @@
 
 .fora-usuario{
     border: 1px solid #d9d9d9;
-    border-top-left-radius: 10px;
-    width: 70rem;
-    margin-left: 30rem;
-    margin-top: 50px;
+    border-top-left-radius: 10px; 
 }
 
 /* Estilos para as células da tabela */
@@ -38,4 +35,12 @@
 
 .fora-usuario .p-button{
     border: 0 !important;
+}
+
+.botao-add{
+    width: 10rem;
+    margin-top: 25px;
+    margin-left: auto;
+
+
 }

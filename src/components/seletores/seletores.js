@@ -5,7 +5,7 @@ import { Dropdown } from 'primereact/dropdown';
 import "./seletores.css";
 import { Button } from 'primereact/button';
 import { Toast } from 'primereact/toast';
-import { useReviewsInfo } from "../../hooks/hooks";
+import { useReviewsInfo, useSumarizacaoProd } from "../../hooks/hooks";
 
 const Seletores = () => {
     const [categorias, setCategorias] = useState([]);
@@ -38,8 +38,15 @@ const Seletores = () => {
     { sigla: 'SP', nome: 'São Paulo' },
     { sigla: 'SE', nome: 'Sergipe' },
     { sigla: 'TO', nome: 'Tocantins' }]);
-    const [demografia, setDemografia] = useState([]);
+    const [idade, setIdade] = useState(null);
+    const selectAge = [
+        {label: "15-30 anos", value: "15-30 anos"},
+        {label: "30-45 anos", value: "30-45 anos"},
+        {label: "45-60 anos", value: "45-60 anos"},
+        {label: "Rafa ou mais", value: "60+ anos"},
+    ]
     const {reviewsInfo, setReviewsInfo} = useReviewsInfo();
+    const {sumarizacaoProd, setSumarizacaoProd} = useSumarizacaoProd();
 
     const [categoriaSelecionada, setCategoriaSelecionada] = useState(null);
     const [subCategoriaSelecionada, setSubCategoriaSelecionada] = useState(null);
@@ -118,6 +125,7 @@ const Seletores = () => {
     
     const handleProductChange = (e) => {
         setProdutoSelecionado(e.value)
+        setSumarizacaoProd(e.value)
     }
 
     const handleSubCategoryChange = (e) => {
@@ -135,30 +143,30 @@ const Seletores = () => {
         getAllCategories();
     }, []);
 
+    const onAgeChange = (e) => {
+        setIdade(e.value);
+    }
+
 
 
     return (
         <>
             <Toast ref={toast} />
-            <div style={{width:'8%'}} className="seletores">
+            <div className="seletores">
                 <h5>Categoria</h5>
                 <Dropdown  value={categoriaSelecionada} options={categorias.map(cat => ({ label: cat.category, value: cat.id }))} onChange={handleCategoryChange} placeholder="Selecione" />
             </div>
-            <div style={{width:'8%'}} className="seletores">
+            <div className="seletores">
                 <h5>Sub-Categoria</h5>
                 <Dropdown value={subCategoriaSelecionada} options={subCategorias.map(subcat => ({ label: subcat.subcategory, value: subcat.id }))} onChange={handleSubCategoryChange} placeholder="Selecione" />
             </div>
-            <div style={{width:'8%'}} className="seletores"> 
+            <div className="seletores"> 
             <h5>Produto</h5>           
             <Dropdown value={produtoSelecionado} options={produtos.map(prod => ({label: prod.name, value:prod }))} onChange={handleProductChange} placeholder="Selecione" />
         </div>
-        <div style={{width:'8%'}} className="seletores"> 
+        <div className="seletores"> 
             <h5>Estado</h5>           
             <Dropdown showClear  value={estadoSelecionado} options={estados} onChange={(e) => setEstadoSelecionado(e.value)} optionLabel="nome" placeholder="Selecione" />
-        </div>
-        <div style={{width:'8%'}} className="seletores"> 
-            <h5>Demografia</h5>           
-            <Dropdown value={demografia} options={demografia} onChange={""} optionLabel="name" placeholder="Selecione" />
         </div>
             <Button className="btn-seletores" onClick={filtrar}>Filtrar</Button>
         </>

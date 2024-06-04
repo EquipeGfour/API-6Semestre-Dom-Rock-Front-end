@@ -6,35 +6,36 @@
     padding-bottom: 3%;
 }
 
-.cadastro-usuario .input-row {
+.editar-usuario .input-row {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.cadastro-usuario .input-column {
+.editar-usuario .input-column {
     flex: 1;
 }
 
-.botao-cad-add {
+.botao-editar-add {
     width: 10rem;
     margin-top: 25px;
     margin-left: auto;
     display: block;
 }
-.cadastro-usuario .large-input-nome {
+
+.editar-usuario .large-input-nome {
     width: 95%;
 }
 
-.cadastro-usuario .large-input-email {
+.editar-usuario .large-input-email {
     width: 120%;
 }
 
-.cadastro-usuario .large-input-pass {
+.editar-usuario .large-input-pass {
     width: 60%;
     margin-left: 30%;
 }
 
-.cadastro-usuario .senha-input{
-    margin-left: 30%
+.editar-usuario .senha-input{
+    margin-left: 30%;
 }

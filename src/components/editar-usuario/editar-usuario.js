@@ -2,26 +2,26 @@ import React, { useState } from "react";
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 import axios from 'axios';
-import './cadastro-usuario.css';
+import './editar-usuario.css';
 
-const CadastroUsuario = () => {
+const EditarUsuario = () => {
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
 
-    const handleSubmit = () => {
-        axios.post( '')
+    const handleSalvar = () => {
+        axios.post('')
             .then(response => {
-                console.log(response.data);
+                console.log('Usuário atualizado com sucesso!');
             })
             .catch(error => {
-                console.error('Erro', error);
+                console.error('Erro:', error);
             });
     };
 
     return (
         <>
-            <div className="input-usuario cadastro-usuario">
+            <div className="input-usuario editar-usuario">
                 <div className="input-row">
                     <div className="input-column">
                         <h5>Nome</h5>
@@ -39,9 +39,9 @@ const CadastroUsuario = () => {
                     </div>
                 </div>
             </div>
-            <Button label='Salvar' className="botao-cad-add" onClick={handleSubmit} />
+            <Button label='Salvar' className="botao-editar-add" onClick={handleSalvar} />
         </>
     )
 }
 
-export default CadastroUsuario;
+export default EditarUsuario;

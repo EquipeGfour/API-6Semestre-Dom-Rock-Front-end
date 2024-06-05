@@ -3,6 +3,7 @@ import { Button } from 'primereact/button';
 import './sumarizacao-palavra.css';
 import axios from 'axios';
 import { useSumarizacaoProd, useSumarizacaoReviews, useReviewsInfo } from '../../hooks/hooks';
+import SearchBar from '../search-bar/search-bar';
 
 const SumaricacaoPalavra = () => {
     const [palavras, setPalavras] = useState([]);
@@ -102,6 +103,9 @@ const SumaricacaoPalavra = () => {
                     {/* <Button icon="pi pi-history" className="botao-reload" onClick={resetarFiltros} /> */}
 
                 <div className='fora-palavra'>
+                    <div className="search-container">
+                        <SearchBar />
+                    </div>
                     {palavras.map((p, i) => (
                         <Button key={i} label={p.palavra} className={verificarSentimento(p.sentimento)} onClick={() => fitrarSumarizacaoPalavra(p.palavra)} />
                     ))}

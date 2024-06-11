@@ -28,4 +28,8 @@ function useSumarizacaoReviews(){
 }
 
 
-export  {useDocs, usePreprocessInfo, useReviewsInfo, useSumarizacaoProd , useSumarizacaoReviews};
+function useAllSumarizacoes(){
+    const context = useContext(Contexto);
+    return context;}
+
+export  {useDocs, usePreprocessInfo, useReviewsInfo, useSumarizacaoProd , useSumarizacaoReviews, useAllSumarizacoes};

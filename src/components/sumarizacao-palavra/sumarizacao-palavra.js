@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Button } from 'primereact/button';
 import './sumarizacao-palavra.css';
 import axios from 'axios';
-import { useSumarizacaoProd, useSumarizacaoReviews, useReviewsInfo } from '../../hooks/hooks';
+import { useSumarizacaoProd, useSumarizacaoReviews, useReviewsInfo, useAllSumarizacoes } from '../../hooks/hooks';
 import SearchBar from '../search-bar/search-bar';
+
 
 const SumaricacaoPalavra = () => {
     const [palavras, setPalavras] = useState([]);
@@ -11,7 +12,7 @@ const SumaricacaoPalavra = () => {
     const { sumarizacaoReviews, setSumarizacaoReviews } = useSumarizacaoReviews();
     const {reviewsInfo, setReviewsInfo} = useReviewsInfo();
     const [palavraSelecionada, setPalavraSelecionada] = useState('');
-    const [sumarizacoes, setSumarizacoes] = useState([]);
+    const {allSumarizacoes, setAllSumarizacoes} = useAllSumarizacoes();
 
     const getSumarizacao = () => {
         if(reviewsInfo && 'id' in sumarizacaoProd){
@@ -20,7 +21,7 @@ const SumaricacaoPalavra = () => {
                 const palavrasLimitadas =  getPalavrasFrequentes(response.data)
                 const reviewsSumarizadas = getReviewsSumarizadas(response.data)
                 setPalavras(palavrasLimitadas);
-                setSumarizacoes(reviewsSumarizadas);
+                setAllSumarizacoes(reviewsSumarizadas);
                 setSumarizacaoReviews(reviewsSumarizadas);
             })
             .catch(error => {
@@ -50,14 +51,15 @@ const SumaricacaoPalavra = () => {
     }
 
     const fitrarSumarizacaoPalavra = (palavra) => {
-        const filtradas = sumarizacoes.filter((r) => 
+        const filtradas = allSumarizacoes.filter((r) => 
             r.toLowerCase().includes(palavra.toLowerCase())
         );
         setSumarizacaoReviews(filtradas);
+        console.log(sumarizacaoReviews);
     }
     
     const resetarFiltros = () => {
-        setSumarizacaoReviews(sumarizacoes);
+        setSumarizacaoReviews(allSumarizacoes);
     }
 
     const getReviewsSumarizadas = (dados) => {

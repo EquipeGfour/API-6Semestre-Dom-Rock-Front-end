@@ -13,21 +13,23 @@ export const ListaUsuario = () => {
     const [usuarios, setUsuarios] = useState([]);
 
     useEffect(() => {
-        setUsuarios([
-            { id: 1, nome: 'João', email: 'joao@example.com', perfil: 'Administrador' },
-            { id: 2, nome: 'Maria', email: 'maria@example.com', perfil: 'Usuário' },
-            { id: 3, nome: 'José', email: 'jose@example.com', perfil: 'Usuário' },
-            { id: 4, nome: 'Ana', email: 'ana@example.com', perfil: 'Usuário' }
-        ]);
+        const fetchUsuarios = async () => {
+            try {
+                const response = await axios.get('http://localhost:8000/users/all');
+                setUsuarios(response.data);
+            } catch (error) {
+                console.error('Erro ao buscar usuários:', error);
+            }
+        };
+
+        fetchUsuarios();
     }, []);
 
     const editarUsuario = (usuarioId) => {
-        // Implemente a lógica de edição aqui
     };
 
     const excluirUsuario = async (usuarioId) => {
         try {
-            // Simulação de exclusão, remove o usuário da lista
             setUsuarios(usuarios.filter(usuario => usuario.id !== usuarioId));
         } catch (error) {
             console.error('Erro ao excluir usuário:', error);
@@ -47,9 +49,8 @@ export const ListaUsuario = () => {
         <>
             <div className=' fora-usuario datatable-scroll-demo'>
                 <DataTable value={usuarios} scrollable scrollHeight="350px">
-                    <Column field="nome" header="Nome"></Column>
+                    <Column field="name" header="Nome"></Column>
                     <Column field="email" header="E-mail"></Column>
-                    <Column field="perfil" header="Perfil"></Column>
                     <Column body={acoesBodyTemplate} header="Ações"></Column>
                 </DataTable>
             </div>

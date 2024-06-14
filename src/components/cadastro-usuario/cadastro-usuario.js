@@ -3,6 +3,7 @@ import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 import { Toast } from 'primereact/toast';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import './cadastro-usuario.css';
 
 const CadastroUsuario = () => {
@@ -10,31 +11,34 @@ const CadastroUsuario = () => {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const toast = useRef(null);
+    const navigate = useNavigate();
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         const usuario = {
             name: nome,
             email: email,
             senha: senha
         };
 
-        axios.post('http://localhost:8000/users/insert', usuario)
-            .then(response => {
-                toast.current.show({ 
-                    severity: 'success', 
-                    summary: 'Sucesso', 
-                    detail: 'Usuário cadastrado com sucesso!', 
-                    life: 3000 
-                });
-            })
-            .catch(error => {
-                toast.current.show({ 
-                    severity: 'error', 
-                    summary: 'Erro', 
-                    detail: 'Erro ao cadastrar usuário.', 
-                    life: 3000 
-                });
+        try {
+            const response = await axios.post('http://localhost:8000/users/insert', usuario);
+            toast.current.show({ 
+                severity: 'success', 
+                summary: 'Sucesso', 
+                detail: 'Usuário cadastrado com sucesso!', 
+                life: 3000 
             });
+            setTimeout(() => {
+                navigate('/listagem-usuarios');
+            }, 1000);
+        } catch (error) {
+            toast.current.show({ 
+                severity: 'error', 
+                summary: 'Erro', 
+                detail: 'Erro ao cadastrar usuário.', 
+                life: 3000 
+            });
+        }
     };
 
     return (

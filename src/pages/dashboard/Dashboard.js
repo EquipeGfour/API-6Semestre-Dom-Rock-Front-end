@@ -10,6 +10,7 @@ import Seletores from "../../components/seletores/seletores";
 
 import SumaricacaoSentenca from "../../components/sumarizacao-sentenca/sumarizacao-sentenca";
 import SumarizacaoPalavra from "../../components/sumarizacao-palavra/sumarizacao-palavra";
+import SearchBar from "../../components/search-bar/search-bar";
 
 
 

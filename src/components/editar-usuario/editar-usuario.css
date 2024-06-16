@@ -1,0 +1,41 @@
+.input-usuario {
+    border: 1px solid #F0EBEB;
+    border-radius: 6px;
+    margin-top: 30px;
+    padding-left: 40px;
+    padding-bottom: 3%;
+}
+
+.editar-usuario .input-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.editar-usuario .input-column {
+    flex: 1;
+}
+
+.botao-editar-add {
+    width: 10rem;
+    margin-top: 25px;
+    margin-left: auto;
+    display: block;
+}
+
+.editar-usuario .large-input-nome {
+    width: 95%;
+}
+
+.editar-usuario .large-input-email {
+    width: 120%;
+}
+
+.editar-usuario .large-input-pass {
+    width: 60%;
+    margin-left: 30%;
+}
+
+.editar-usuario .senha-input{
+    margin-left: 30%;
+}

@@ -7,10 +7,14 @@ import { useSumarizacaoProd, useSumarizacaoReviews, useReviewsInfo } from '../..
 const GraficoRadar = () => {
     const [produtoMasculino, setReviewsMasculino] = useState([]);
     const [produtoFeminino, setReviewsFeminino] = useState([]);
-    const { sumarizacaoProd } = useSumarizacaoProd();
+    const { sumarizacaoProd, setSumarizacaoProd } = useSumarizacaoProd();
     const { reviewsInfo } = useReviewsInfo();
 
     const getGraficoRadarResults = async () => {
+        console.log( typeof sumarizacaoProd);
+        if (sumarizacaoProd != undefined){
+
+        
         if (reviewsInfo && 'id' in sumarizacaoProd) {
             try {
                 const response = await axios.get(`http://localhost:8001/products/genres?product_id=${sumarizacaoProd.id}`);
@@ -29,7 +33,8 @@ const GraficoRadar = () => {
                 console.log(error);
             }
         }
-    };
+    }
+};
 
     const chartData = {
         labels: ['15-30 anos', '31-45 anos', '46-60 anos', '+60 anos '],

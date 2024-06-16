@@ -1,0 +1,40 @@
+.input-usuario {
+    border: 1px solid #F0EBEB;
+    border-radius: 6px;
+    margin-top: 30px;
+    padding-left: 40px;
+    padding-bottom: 3%;
+}
+
+.cadastro-usuario .input-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cadastro-usuario .input-column {
+    flex: 1;
+}
+
+.botao-cad-add {
+    width: 10rem;
+    margin-top: 25px;
+    margin-left: auto;
+    display: block;
+}
+.cadastro-usuario .large-input-nome {
+    width: 95%;
+}
+
+.cadastro-usuario .large-input-email {
+    width: 120%;
+}
+
+.cadastro-usuario .large-input-pass {
+    width: 60%;
+    margin-left: 30%;
+}
+
+.cadastro-usuario .senha-input{
+    margin-left: 30%
+}

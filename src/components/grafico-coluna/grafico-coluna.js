@@ -2,24 +2,32 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Chart } from 'primereact/chart';
 import "./grafico-coluna.css";
+import { useSumarizacaoProd, useSumarizacaoReviews, useReviewsInfo } from '../../hooks/hooks';
 
 const GraficoColuna = () => {
+    const { sumarizacaoProd } = useSumarizacaoProd();
+    const { reviewsInfo } = useReviewsInfo();
     const [graficoColuna, setGraficoColuna] = useState([]);
     const [estados, setEstados] = useState([]);
 
     useEffect(() => {
         const getGraficoColunaResults = async () => {
+            let url = 'http://localhost:8000/review/states_and_reviews';
+            if (sumarizacaoProd) {
+                url += `?product_id=${sumarizacaoProd.id}`;
+            }
             try {
-                const response = await axios.get('http://localhost:8000/review/get_states_and_reviews');
+                const response = await axios.get(url);
                 console.log(response.data);
                 const data = response.data;
                 const tempGraficoColuna = [];
                 const tempEstados = [];
-                
+
                 data.forEach(element => {
                     tempGraficoColuna.push(element.total_reviews);
                     tempEstados.push(element.state);
-                });                
+                });
+                
                 setGraficoColuna(tempGraficoColuna);
                 setEstados(tempEstados);
             } catch (error) {
@@ -29,7 +37,7 @@ const GraficoColuna = () => {
             }
         };
         getGraficoColunaResults();
-    }, []);
+    }, [sumarizacaoProd]);
 
     const multiAxisData = {
         labels: estados,

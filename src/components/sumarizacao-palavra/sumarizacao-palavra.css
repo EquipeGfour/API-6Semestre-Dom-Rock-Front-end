@@ -29,9 +29,19 @@
 
 .fora-palavra {
     display: flex;
-    justify-content: center;
+    align-items: center;
     margin-top: 80px;
-    flex-wrap: wrap; 
+    margin-left: 55px !important;
+   
+}
+
+
+.fora-palavra .search-bar {
+    margin-right: 20px; /* Ajuste o valor conforme necessário */
+}
+
+.search-container {
+    margin-right: 16px; /* Ajuste o valor conforme necessário */
 }
 
 .fora-palavra .p-button {
